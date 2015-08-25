@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/kenaku/webdev/style/wp-content/themes/style",
+      "file_exclude_patterns": ["*.css","*.po","*.mo",".git*","*.md"]
+		},
+		{
+			"path": "/Users/kenaku/webdev/style/static-src/css"
+		}
+	]
+}
