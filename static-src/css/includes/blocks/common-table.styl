@@ -1,0 +1,91 @@
+.common-table
+  min-width 100%
+  .page.person &
+    border-top 1px solid gray4
+  &--centered
+    th
+    td
+      text-align center
+  &__row
+    border-top 1px solid gray4
+    &:first-child
+      border none
+    .page.person &
+      border none
+  &__cell
+    padding rem(30) rem(20) rem(30) 0
+    .page.person &
+    .contacts__table &
+      padding rem(10) rem(10) rem(20) rem(0)
+      vertical-align top
+      +below(sm)
+        padding rem(10) rem(10) rem(10) 0
+    &--header
+      margin-bottom rem(10)
+      text-transform uppercase
+      font-weight 300
+      font-size rem(12)
+      span&
+      .page.person &
+        display block
+        padding-top rem(20)
+        padding-bottom 0
+        margin-bottom rem(5)
+        +below(sm)
+          padding-top rem(0)
+    &--accent
+      font-weight 500
+    &--huge
+      font-weight 700
+      font-size rem(23)
+      font-family font-serif
+    &--name
+      text-align left!important
+    &--download
+      text-align center
+      width rem(120)
+      i
+      span
+        font-size: rem(12)
+        display inline-block
+        // float left
+        color gray4
+        margin-right rem(10)      
+        vertical-align middle
+        text-align left
+        transition color .3s
+      span
+        margin-right 0
+      a
+        display block
+        &:hover span
+          color gray3
+  +below(sm)
+    &__row
+      display block
+      padding rem(10) 0
+      .visible-xs &
+        display table-row
+    &__cell
+      display block
+      width 100%
+      padding rem(5) 0
+      .visible-xs &
+        display table-cell
+        width 1%
+        &--header
+          text-align left
+      &--download
+        text-align left
+        
+.years-list
+  &__year
+    vertical-align top
+    font-size rem(20)
+    padding-right rem(20)
+    +below(sm)
+      font-size rem(17)
+  &__text
+    padding-bottom rem(20)
+  tr:last-child .years-list__text
+    padding-bottom rem(0)

@@ -1,0 +1,143 @@
+button-size = rem(79)
+button-size-sm = rem(47)
+
+.header-search
+.header-lang
+.mobile-menu-button
+  text-align center
+  position absolute
+  height button-size
+  width button-size
+  
+.mobile-menu-button
+  position relative
+  display block
+  background gray5
+  float right
+
+.header-search
+  right button-size
+  z-index 10
+  overflow hidden
+  -webkit-backface-visibility: hidden;
+  transition all .3s cubic-bezier(0.86, 0, 0.07, 1);
+  &__input
+    left 0
+    white-space nowrap
+    overflow hidden
+    line-height 1.5
+    padding rem(29)
+    padding-left rem(15)
+    position absolute
+    width calc(100% - 6rem)
+    opacity 0
+    font-family font-sans
+    font-weight 200
+    font-size rem(13)
+    background white
+    &:-webkit-autofill
+      box-shadow: 0 0 0px 1000px white inset
+    .header-search--open &
+      opacity 1
+    input[type="search"]&
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+  &__icon svg g
+      stroke gray3
+      transition stroke .3s
+  &__icon
+  &__submit
+    background white
+    right 0
+    top 0
+    position absolute
+    height button-size
+    width button-size
+    padding-top rem(8)
+    line-height: button-size
+    cursor: pointer;
+  &__submit
+    background: #fff;
+    opacity: 0;
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: -1;
+  &--open
+  .no-js &
+    width rem(300)
+  &--open
+    right 0
+    
+  &--open &__icon,
+  .no-js  &__icon
+    z-index: 11;
+    svg g
+      stroke gray6 
+  &--open &__submit,
+  .no-js &__submit
+    z-index: 90;
+    
+.header-lang
+  background gray3
+  padding 0
+  right 0
+  transition background .3s ease-in-out
+  color white
+  &:hover
+    background gray6
+  &__link
+    display block
+    width 100%
+    line-height button-size
+    height button-size
+    text-align center
+    font-size rem(19)
+    font-family font-sans
+    font-weight 500
+    color white
+    &:hover
+    &:visited
+    &:active
+      color white
+  
++below(md)
+  .header-lang
+  .header-search
+  .mobile-menu-button
+    height button-size-sm
+    width button-size-sm
+  .header-lang
+  .header-search
+    margin-right button-size-sm
+  .header-lang
+    &__link
+      line-height button-size-sm
+      height button-size-sm
+      font-size rem(14)
+
+  .header-search
+    right button-size-sm
+    &__input
+      width: calc(100% - 3rem);
+      padding rem(15)
+    &__icon
+    &__submit
+      height button-size-sm
+      width button-size-sm
+      line-height button-size-sm
+    &--open
+    .no-js &
+      width calc(100% - 2.9375rem) 
+    &--open
+      right 0
+    &--open &__icon,
+    .no-js  &__icon
+      z-index: 11;
+    &--open &__submit,
+    .no-js &__submit
+      z-index: 90;
+      
+  .mobile-menu-button
+    line-height button-size-sm
+    padding-top rem(2)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>norm</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-Index-1170" sketch:type="MSArtboardGroup" transform="translate(-1032.000000, -104.000000)" stroke="#C5C5C5" stroke-width="2">
+            <g id="DSK-header" sketch:type="MSLayerGroup">
+                <g id="search-" transform="translate(878.000000, 78.000000)" sketch:type="MSShapeGroup">
+                    <g id="norm" transform="translate(155.000000, 27.000000)">
+                        <path d="M7.75340449,14.8415094 C11.5439845,14.8415094 14.6168568,11.653439 14.6168568,7.72075472 C14.6168568,3.78807048 11.5439845,0.6 7.75340449,0.6 C3.96282443,0.6 0.889952153,3.78807048 0.889952153,7.72075472 C0.889952153,11.653439 3.96282443,14.8415094 7.75340449,14.8415094 Z" id="Oval-23"></path>
+                        <path d="M12.576371,13.109434 L19.832193,20.6372679" id="Line" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

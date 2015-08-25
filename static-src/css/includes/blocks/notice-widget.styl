@@ -1,0 +1,47 @@
+.notice-widget
+  .page__content &
+    padding 0 rem(15)
+  &__slider
+    margin 0
+  &__notice
+    font-size: rem(13)
+    font-family: font-sans
+    font-weight: 500
+    line-height: rem(16)
+    padding rem(15) rem(15) rem(40)
+    display block
+    color white
+    background: gray6
+    transition background-color .3s
+    &:hover
+      color white
+      background orange
+      .touch &
+        color white
+        background: gray6
+        
+  &__image
+    width rem(44)
+    padding-bottom rem(15)
+  &__text
+    // height rem(80)
+    overflow hidden
+  +between(xs,md)
+    &__notice
+      padding rem(30) rem(30) rem(40)
+  +below(md)
+    &__image
+    &__text
+      float left
+    &__text
+      padding-left rem(10)
+      width 70%
+    &__image
+      width 25%
+  .owl-page
+    margin rem(10)
+    
+
+.advert__date
+  font-size rem(12)
+  letter-spacing rem(.5)

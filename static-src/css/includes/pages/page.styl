@@ -1,0 +1,153 @@
+.page
+  &__main-image
+    padding-bottom rem(30)
+  &__content
+    font-family font-sans
+    font-size rem(15)
+    padding rem(0) rem(100)
+    min-height 500px
+    padding-bottom rem(60)
+    +below(md)
+      padding rem(0) rem(15)
+    h1
+    h2
+    h3
+      font-family font-serif
+      padding-bottom rem(10)
+    .page__title
+    h1
+      font-size rem(35)
+      line-height rem(43)
+      padding-bottom rem(20)
+      .page.person &
+        +below(sm)
+          margin-top rem(15)          
+      +below(sm)
+        font-size rem(24)
+        line-height rem(30)
+    h2,h3
+      font-size rem(24)
+      line-height rem(25)
+      margin-bottom rem(5)
+      margin-top rem(20)
+        
+    p
+      padding-bottom rem(15)
+      a 
+        font-weight 400
+        color blue
+        &:hover
+          color gray3
+    ul
+      margin-bottom rem(15)
+      li
+        padding-left rem(20)
+        padding-bottom rem(10)
+        position relative
+        &:before
+          display: inline-block
+          content: ''
+          position absolute
+          left 0
+          top rem(6)
+          width rem(8)
+          height rem(8)
+          border-radius 100%
+          background gray3
+          
+    ul.page__list--ticks li
+      padding-left rem(30)
+      &:before
+        top rem(4)
+        width rem(18)
+        height rem(18)
+        background transparent url("../img/icons/tick-list-bullet.svg") no-repeat 50% 50%
+        // border .1rem solid gray6
+        background-size 100%
+    
+  &__lead
+    font-size rem(20)
+    line-height rem(25)
+    padding-bottom rem(20)
+    font-weight 300
+    +below(sm)
+      font-size rem(17)
+      line-height rem(22)
+  &__slider
+    position relative
+    &__slides
+      &__control
+        z-index: 100
+        position: absolute
+        cursor: pointer
+        width: 10%
+        height: 100%
+        left 0;
+        top 0
+        display block!important
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        transition opacity .3s
+        opacity .7
+        .no-touch &:hover
+          opacity 1
+        i
+          width: rem(32)
+          height: rem(32)
+          display: block
+          position: absolute
+          margin: auto
+          top: 0
+          bottom: 0
+          left: 0
+          right: 0
+        &--next
+          right: 0
+          left auto 
+          i
+            transform: rotate(180deg)
+    &__meta
+      padding rem(10) 0
+      font-weight 500
+    &__author
+      font-size rem(12)
+      font-weight 300  
+    &__counter
+      text-align right
+  .years-list
+    tr 
+    &__year
+      vertical-align top
+      font-size rem(20)
+      padding-right rem(20)
+      +below(sm)
+        font-size rem(17)
+    &__text
+      padding-bottom rem(20)
+
+.two-columns
+  column-count 2
+  column-gap rem(20)
+  +below(xs)
+    column-count 1
+ 
+.download-module
+  position relative
+  min-height rem(22)
+  display block
+  &__icon
+    position absolute
+  &__text
+    display block
+    margin-left rem(35)
+    font-size rem(11)
+
+.concrete-news
+  &__meta
+    margin-top rem(5)
+    font-size rem(12)
+    text-transform uppercase
+  &__author
+    color gray3
+    margin-bottom rem(30)
+.common-module
+  margin-bottom rem(20)   

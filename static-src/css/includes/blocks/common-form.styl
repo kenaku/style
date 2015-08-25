@@ -1,0 +1,32 @@
+.common-form
+  &__label
+    font-weight: 400
+    margin-bottom 0
+    display: block
+  &__input
+    display: block
+    width rem(350)
+    border-bottom 1px solid gray3
+    margin-bottom: rem(20)
+    border-radius 0 
+    +below(xs)
+      width 100%
+    &--textarea
+      border 1px solid gray3
+      width 100%
+      resize:vertical;
+    &::-webkit-input-placeholder
+      color gray6
+    &::-moz-placeholder
+      color gray6
+    &:-ms-input-placeholder
+      color gray6    
+    &:-webkit-autofill
+      box-shadow: 0 0 0px 1000px white inset
+    input[type="search"]&
+      -webkit-appearance: none;
+  &__submit
+    border-radius 0
+    width rem(290)
+    +below(xs)
+      width 100%

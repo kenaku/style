@@ -1,0 +1,26 @@
+.common-tabs
+  min-width 100%
+  text-transform uppercase
+  letter-spacing rem(.5)
+  display table
+  &__tab
+    background gray1
+    display table-cell
+    height rem(60)
+    color gray6
+    font-weight bold
+    font-size rem(12)
+    text-align center
+    vertical-align middle
+    width 1%
+    padding rem(5)
+    transition background .3s
+    +below(xs)
+      font-size rem(10)
+    .no-touch &:hover
+    &.current
+      background orange
+      color gray6
+    +below(xs)
+      height rem(48)
+ //

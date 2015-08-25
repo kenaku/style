@@ -1,0 +1,163 @@
+
+.header
+  &-spbgu
+    background: gray1
+    color gray6
+    text-align center
+    overflow hidden
+    padding 0
+    &__slide
+      transform translate(0,0)
+      transform translate3d(0,0,0)
+      transition transform .3s ease-in-out
+      .header-spbgu:hover &
+        transform translate(-100%,0)
+        transform translate3d(-100%,0,0)
+    &__frontside
+      padding rem(15) rem(5)
+    &__backside
+      position absolute
+      width 100%
+      height 100%
+      left 100%
+      top 0
+      background gray4
+      display block
+    &__gerb
+      margin-bottom rem(5)
+      svg
+        width auto
+        max-height rem(70)
+        +below(md)
+          max-height rem(60)
+        +below(sm)
+          max-height rem(52)
+    &__title
+      font-weight: bold
+      font-size: rem(10)
+      letter-spacing rem(0.5)
+      .header-spbgu__backside &
+        color white
+    &__arrow
+      margin rem(30) 0 rem(20)
+      +below(md)
+        margin rem(20) 0 rem(10)
+        svg
+          width auto
+          height rem(30)
+      
+    &__link
+      display block
+      
+  &-econ
+    padding-left rem(30)
+    &__logo
+    &__title
+      float left 
+      margin-top rem(9) 
+      +below(sm) 
+        margin-top rem(6) 
+    &__logo
+      display block
+      svg
+        width rem(47)
+        height rem(60)
+        +below(md)
+          // width rem(55)
+          margin-top rem(8)
+          height rem(50)
+        +below(sm)
+          width rem(44)
+          margin-top rem(8)
+          height rem(40)
+          padding-left 0
+    &__title
+      font-family: font-sans
+      font-size: rem(18)
+      // line-height: rem(20)
+      line-height: 1.2;
+      letter-spacing: rem(1.47)
+      font-weight: 800
+      color blue
+      padding-top rem(12)
+      padding-left rem(10)
+      +below(md)
+        line-height: rem(20)
+        padding-top rem(14)
+      +below(sm)
+        font-size: rem(12)
+        line-height: rem(14)
+        padding-top rem(15)
+        padding-left rem(2)
+    +below(md)
+      // margin-bottom rem(-11) 
+      padding-left rem(15)
+      padding-top 0
+      // margin-bottom rem(-3)  
+    +below(sm)
+      // margin-bottom rem(-1)  
+    
+.shortcuts-menu
+  text-align right
+  &__list
+    margin-right -15px
+    padding rem(20)
+    font-family: font-sans
+    font-weight: 500
+    font-size: rem(11)
+    background: gray1
+    display block
+    float right
+    +below(lg)
+      font-size rem(10)
+  &__item
+    text-transform uppercase
+    float left
+    margin-right rem(14)
+    line-height rem(35)
+    &:last-child
+      margin-right 0
+      
+.main-menu
+  &__list
+    font-family: font-sans
+    font-weight: 500
+    font-size: rem(15)
+    padding 0 0 0 rem(15)
+    +below(lg)
+      // padding-top rem(31)
+      font-size: rem(13)
+  &__item
+    float left
+    margin-right rem(20)
+    +below(lg)
+      margin-right rem(15)
+    &:last-child
+      margin-right 0
+  &__link
+    color gray6
+    display block
+    line-height rem(78)
+    position relative
+    &:after
+      content ""
+      display block
+      position absolute
+      margin 0 rem(-5)
+      height 0
+      bottom -1px
+      left 0
+      right 0
+      transition background .5s, height .5s
+      background gray6
+    .active &
+    .current &
+      &:after
+        transition background .5s, height .5s
+        height rem(14)
+    .current &
+      &:after
+        background blue
+    .active &
+      &:after
+        background gray6

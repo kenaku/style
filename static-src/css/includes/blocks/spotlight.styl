@@ -1,0 +1,30 @@
+.spotlight
+  display block
+  background: blue
+  margin 0 rem(-100) // компенсируем отступы .page__content
+  padding-bottom rem(35)
+  margin-bottom: rem(35)
+  +below(md)
+    margin-bottom: rem(0)
+    padding-bottom: rem(20)
+  +below(sm)
+    margin rem(0) rem(-15)
+  &__title
+  &__lead
+  &__meta
+    padding 0 rem(100)
+    color white
+    +below(sm)
+      padding 0 rem(15)
+  &__meta
+    font-size rem(12)
+    text-transform uppercase
+  .events &__title
+    font-family font-sans
+    &__date
+      display: block
+      font-family: font-serif
+      font-weight: 700
+  .events &
+    background: gray4
+  

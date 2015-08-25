@@ -1,0 +1,46 @@
+.cafedra
+  position relative
+  min-height rem(88)
+  font-family font-sans
+  font-size rem(14)
+  display block
+  color gray6
+  padding rem(10)
+  // padding 0 rem(15)
+  transition background .3s
+  margin-right rem(-15)
+  margin-bottom 0
+  margin-left rem(15)
+  .no-touch &:hover
+    background gray1
+  aside &
+    margin-left rem(15)
+  //   +below(md)
+  //     margin 0
+
+  &__image
+    width rem(68)
+    height rem(68)
+    position absolute
+  &__text
+    color gray6
+    padding-left rem(90)
+    padding-right rem(45)
+    padding-top rem(10)
+
+.cafedra-big  
+  display block
+  font-family font-sans
+  padding 0 rem(15)
+  margin-bottom rem(10)
+  &__text
+    padding rem(25)
+    color gray6
+    background transparent
+    transition background .3s
+  aside &
+    +below(md)
+      padding 0 rem(30)
+  &:hover
+    .cafedra-big__text
+      background gray1

@@ -1,0 +1,59 @@
+// .events
+.events-widget
+  font-size: rem(18)
+  background: gray1
+  .page__content &
+    background: transparent
+    font-size: rem(24)
+    +below(md)
+      margin 0 rem(-15)
+    +below(sm)
+      font-size: rem(18)
+    
+  &__event
+    display block
+    color gray6
+    transition background-color .3s
+    &:hover
+      background: gray2
+      color gray6
+      .touch &
+        background: inherit
+      .page__content &
+        background: transparent
+    +between(600px,md)
+      display table-cell
+      width 33.333333%
+    +above(md)
+      &--md-hidden
+        display none
+    .page__content &
+      margin-bottom rem(40)
+      &:last-child 
+        margin-bottom: 0
+      +between(600px,md)
+        display block
+      +above(md)
+        &--md-hidden
+          display block
+  &__date
+    font-weight: 700
+    // font-family: font-sans
+    padding rem(15) rem(15) rem(5)
+    +between(xs,md)
+      padding rem(30) rem(30) rem(5)
+  &__text
+    font-family: font-sans
+    padding 0 rem(15) rem(15)
+    +between(xs,md)
+      padding 0 rem(30) rem(30) 
+
+
+.event-meta
+  &__date
+  &__time
+    font-size rem(18)
+    font-weight 500
+    line-height rem(22)
+  &__time
+    margin-bottom rem(5)

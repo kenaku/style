@@ -1,0 +1,95 @@
+// Colors
+
+
+
+h1,h2,h3,h4,h5,h6,p,ul,ol,li,button,input,strong,small,em
+  margin 0
+  padding 0
+  font-size inherit
+  font-weight inherit
+  font-style inherit
+
+b
+  font-weight inherit
+
+i
+  font-style inherit
+
+ul,ol,li
+  display block
+hr
+  border-color gray3
+a
+  text-decoration none
+  outline: none;
+  color gray4
+  text-decoration: none
+  transition color .3s
+  &:hover
+  &:active
+    color gray3
+    text-decoration: none
+    outline: none;
+    .touch &
+      color gray4
+  &:link
+  &:focus
+    outline: none;
+    text-decoration: none
+  &:focus
+    color gray4
+    
+button, input, textarea
+  border none
+  background none
+  outline none
+  -webkit-appearance: none;
+  box-shadow none
+
+html
+  font-family sans-serif
+  box-sizing border-box
+  font-size 16px
+  // height 100%
+  // overflow hidden
+  +below(md)
+    &.disable-scroll
+    &.disable-scroll body
+      height 100%
+      overflow-y: hidden
+*
+*:before
+*:after
+  box-sizing inherit
+
+img
+  max-width 100%
+  width 100%
+
+body
+  font-family: font-serif
+  background: #eee
+  color gray6
+  -webkit-font-smoothing: antialiased;
+  overflow-x hidden
+  font-size rem(16)
+
+.wrapper
+  overflow hidden
+  max-width 1402px
+  margin 0 auto
+
+.container
+  background: #fff
+  width auto!important
+  >.row
+    margin-right -16px // ie fix
+  &.main-content 
+    position: relative
+    z-index 100
+    margin-right -1px // ie fix
+.row
+  position relative
+  
+// ie bootstrap fix
+@-ms-viewport{ width: auto !important; }

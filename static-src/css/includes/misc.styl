@@ -1,0 +1,50 @@
+.big-btn
+  display: block
+  background: gray5
+  padding rem(20)
+  text-transform uppercase
+  color white!important
+  text-align: center
+  font-family: font-sans
+  font-size: rem(13)
+  font-weight: 500
+  height rem(59)
+  transition background-color .3s
+  text-decoration none!important
+  &:hover
+    color white
+    background: blue
+    .touch &
+      color white
+      background: gray5
+  &--blue
+    background blue
+    color white
+    &:hover
+      color white
+      background: light-blue
+      .touch &
+        color white
+        background: blue
+  &--small
+    max-width rem(300)
+.big-gap
+  margin-bottom rem(40)
+  
+.admission-result
+  margin-bottom rem(30)
+  
+.abiturient
+  background gray6
+  .header-econ__title
+    color white
+  .header-econ__logo svg g
+    fill white
+  .header-econ__title
+  .header-econ__logo
+    margin-top rem(5)
+  .big-btn
+    height auto
+    font-weight bold
+    +below(sm)
+      font-size rem(11)

@@ -1,0 +1,16 @@
+.breadcrumbs
+  padding rem(25) rem(25) rem(25) rem(100)
+  font-family font-sans
+  font-size rem(12)
+  +below(md)
+    padding rem(15)
+  +below(sm)
+    font-size rem(10)
+  &__link
+    color blue
+    &:after
+      content "/"
+      display inline-block
+      padding 0 rem(5)
+    &:last-child:after 
+      display none

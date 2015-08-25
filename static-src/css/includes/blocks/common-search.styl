@@ -1,0 +1,55 @@
+button-size = rem(78)
+button-size-sm = rem(47)
+
+.common-search
+  text-align center
+  height button-size
+  background: gray1
+  position relative
+.common-search
+  z-index 10
+  overflow hidden
+  -webkit-backface-visibility: hidden;
+  &__input
+    white-space nowrap
+    line-height 1.5
+    padding rem(29)
+    padding-left rem(100)
+    width 100%
+    font-family font-sans
+    font-weight 200
+    font-size rem(14)
+    +below(sm)
+      padding-left: rem(15)
+    color gray6
+    &::-webkit-input-placeholder
+      color gray6
+    &::-moz-placeholder
+      color gray6
+    &:-ms-input-placeholder
+      color gray6    
+    &:-webkit-autofill
+      box-shadow: 0 0 0px 1000px white inset
+    input[type="search"]&
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+  &__icon svg g
+      stroke gray3
+      transition stroke .3s
+  &__icon
+  &__submit
+    right 0
+    top 0
+    position absolute
+    height button-size
+    width button-size
+    padding-top rem(8)
+    line-height: button-size
+    cursor: pointer;
+  &__submit
+    background: #fff;
+    opacity: 0;
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: 1;
