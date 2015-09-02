@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="212px" height="121px" viewBox="0 0 212 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>8 иконка</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Иконки" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="иконки-символы" sketch:type="MSArtboardGroup" transform="translate(-817.000000, -792.000000)" stroke="#4A4A4A" stroke-width="1.38495868">
+            <g id="8-иконка" sketch:type="MSLayerGroup" transform="translate(818.000000, 792.000000)">
+                <g id="6-кресло" sketch:type="MSShapeGroup">
+                    <path d="M70.0086731,84.6300578 L70.0008162,72.7207245 C70.0000587,71.572466 69.0607293,70.6416185 67.9229286,70.6416185 L7.04984725,70.6416185 L7.04984725,84.630058 L70.0086731,84.6300578 Z" id="Path-35" stroke-linejoin="round"></path>
+                    <path d="M0.0539182,0.699421965 L10.5465827,0.699421965 C12.462559,0.699421965 14.1704173,2.24177804 14.3611548,4.14400977 L21.0288958,70.6416185 L7.0707366,70.6416185 L0.0539182,0.699421965 Z" id="Path-36" stroke-linejoin="round"></path>
+                    <path d="M7.04118801,119.601156 L7.04118801,84.6300578" id="Path-37" stroke-linecap="round"></path>
+                    <path d="M70.0182334,119.601155 L70.006366,84.6300578" id="Path-38" stroke-linecap="round"></path>
+                </g>
+                <g id="6-кресло-copy" transform="translate(174.300000, 59.800578) scale(-1, 1) translate(-174.300000, -59.800578) translate(138.600000, 0.000000)" sketch:type="MSShapeGroup">
+                    <path d="M70.0086731,84.6300578 L70.0008162,72.7207245 C70.0000587,71.572466 69.0607293,70.6416185 67.9229286,70.6416185 L7.04984725,70.6416185 L7.04984725,84.630058 L70.0086731,84.6300578 Z" id="Path-35"></path>
+                    <path d="M0.0539182,0.699421965 L10.5465827,0.699421965 C12.462559,0.699421965 14.1708556,2.24177804 14.3621336,4.14400977 L21.048771,70.6416185 L7.04110305,70.6416185 L0.0539182,0.699421965 Z" id="Path-36" stroke-linejoin="round"></path>
+                    <path d="M7.04118801,119.601156 L7.04118801,84.6300578" id="Path-37" stroke-linecap="round"></path>
+                    <path d="M70.0182334,119.601155 L70.006366,84.6300578" id="Path-38" stroke-linecap="round"></path>
+                </g>
+                <path d="M122.528228,119.601156 L87.5381937,119.605832" id="Path-54" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M104.973938,119.344524 L105.020611,56.6531792" id="Path-55" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M56.0616817,49.6589595 C54.1514298,49.6589595 52.6028647,51.2112036 52.6028647,53.1150884 L52.6028647,56.6531792 L157.456933,56.6107562 L157.45693,53.1144914 C157.456929,51.2060538 155.913857,49.6589595 153.998111,49.6589595 L56.0616817,49.6589595 Z" id="Path-56" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="51px" height="50px" viewBox="0 0 51 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 23</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Главная-стр" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="1-главная" sketch:type="MSArtboardGroup" transform="translate(-1202.000000, -2487.000000)" fill="#FFFFFF">
+            <g id="ПОДВАЛ" sketch:type="MSLayerGroup" transform="translate(-1.000000, 2477.000000)">
+                <g id="адреса-и-телефоны" transform="translate(1.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <g id="вверх-кнопка" transform="translate(1192.000000, 0.000000)">
+                        <path d="M35,10 L60.5,35 L45,35 L45,60 L25,60 L25,35 L10,35 L35,10 Z" id="Path-23"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

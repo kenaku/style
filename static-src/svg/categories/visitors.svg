@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="73px" height="121px" viewBox="0 0 73 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>7 иконка</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Иконки" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="иконки-символы" sketch:type="MSArtboardGroup" transform="translate(-606.000000, -792.000000)">
+            <g id="7-иконка" sketch:type="MSLayerGroup" transform="translate(607.000000, 793.000000)">
+                <path d="M2.76692271,84 C1.61553144,84 0.682144391,83.0596816 0.682144391,81.9191757 L0.682144391,74.85723 C0.682144391,72.174656 2.86307988,70 5.54167942,70 L66.1196391,70 C68.8034862,70 70.9791741,72.1721392 70.9791741,74.85723 L70.9791741,81.9191757 C70.9791741,83.0683832 70.038591,84 68.8943958,84 L2.76692271,84 Z" id="Path-39" stroke="#4A4A4A" stroke-width="1.38833333" sketch:type="MSShapeGroup"></path>
+                <path d="M11.9283022,69.9955539 C11.5427969,69.9955187 11.2457456,69.6834204 11.2646086,69.3027202 L14.4580022,4.85252378 C14.5907902,2.1725489 16.878758,0 19.5606422,0 L52.0426029,0 C54.7279251,0 57.0196992,2.17172027 57.1615381,4.85283643 L60.5713624,69.3071854 C60.5916047,69.6898163 60.2926978,69.9999712 59.9099952,69.9999362 L11.9283022,69.9955539 Z" id="Path-39-Copy" stroke="#4A4A4A" stroke-width="1.38833333" sketch:type="MSShapeGroup"></path>
+                <path d="M4.24142697,119 L7.74964578,84" id="Path-40" stroke="#4A4A4A" stroke-width="1.38833333" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M67.4945211,119 L63.9942963,84" id="Path-41" stroke="#4A4A4A" stroke-width="1.38833333" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Oval-20" fill="#4A4A4A" sketch:type="MSShapeGroup" cx="35.8514851" cy="14" rx="1.40594059" ry="1.4"></ellipse>
+                <ellipse id="Oval-20-Copy" fill="#4A4A4A" sketch:type="MSShapeGroup" cx="35.8514851" cy="56" rx="1.40594059" ry="1.4"></ellipse>
+                <ellipse id="Oval-20-Copy-2" fill="#4A4A4A" sketch:type="MSShapeGroup" cx="35.8514851" cy="35" rx="1.40594059" ry="1.4"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

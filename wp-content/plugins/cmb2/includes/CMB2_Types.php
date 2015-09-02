@@ -467,9 +467,9 @@ class CMB2_Types {
 		return $this->input( array( 'class' => 'cmb2-text-medium', 'desc' => $this->_desc() ) );
 	}
 
-	public function text_email() {
-		return $this->input( array( 'class' => 'cmb2-text-email cmb2-text-medium', 'type' => 'email' ) );
-	}
+	// public function text_email() {
+	// 	return $this->input( array( 'class' => 'cmb2-text-email cmb2-text-medium', 'type' => 'email' ) );
+	// }
 
 	public function text_url() {
 		return $this->input( array( 'class' => 'cmb2-text-url cmb2-text-medium regular-text', 'value' => $this->field->escaped_value( 'esc_url' ) ) );
@@ -775,7 +775,7 @@ class CMB2_Types {
 		$saved_terms = is_wp_error( $names ) || empty( $names )
 			? $this->field->args( 'default' )
 			: wp_list_pluck( $names, 'slug' );
-		$terms       = get_terms( $this->field->args( 'taxonomy' ), 'hide_empty=0' );
+		$terms       = get_terms( $this->field->args( 'taxonomy' ), array( 'orderby' => 'term_group','hide_empty' => 0 ));
 		$name        = $this->_name() . '[]';
 		$options     = ''; $i = 1;
 
@@ -784,11 +784,14 @@ class CMB2_Types {
 		} else {
 
 			foreach ( $terms as $term ) {
+				$class = $term->parent > 0 ? 'child' : 'parent';
 				$args = array(
 					'value' => $term->slug,
 					'label' => $term->name,
 					'type' => 'checkbox',
 					'name' => $name,
+					'class' => $class,
+
 				);
 
 				if ( is_array( $saved_terms ) && in_array( $term->slug, $saved_terms ) ) {

@@ -74,6 +74,9 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', false);
 
+
+ini_set('memory_limit', '64M');
+
 /* Это всё, дальше не редактируем. Успехов! */
 
 /** Абсолютный путь к директории WordPress. */

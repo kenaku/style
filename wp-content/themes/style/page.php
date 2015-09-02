@@ -24,7 +24,14 @@
 									<?php
 										// the content (pretty self explanatory huh)
 										the_content();
-
+$terms = get_terms( 'accessories', array(
+ 	'orderby'    => 'count',
+ 	'hide_empty' => 0,
+ ) );
+foreach ($terms as $term) {
+	echo $term->slug . "<br>";
+}
+print_r($terms->parent);
 										/*
 										 * Link Pages is used in case you have posts that are set to break into
 										 * multiple pages. You can remove this if you don't plan on doing that.
