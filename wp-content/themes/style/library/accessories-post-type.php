@@ -31,7 +31,7 @@ function accessories_post_type() {
 		'label'               => 'Комплектующее',
 		'description'         => 'Комплектующие',
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', ),
+		'supports'            => array( 'title', 'thumbnail' ),
 		'taxonomies'          => array( 'accessories' ),
 		'hierarchical'        => false,
 		'public'              => false,

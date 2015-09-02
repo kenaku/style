@@ -31,7 +31,7 @@ function materials_post_type() {
 		'label'               => 'Материал',
 		'description'         => 'Материалы',
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', ),
+		'supports'            => array( 'title', 'thumbnail', ),
 		'taxonomies'          => array( 'materials' ),
 		'hierarchical'        => false,
 		'public'              => false,
