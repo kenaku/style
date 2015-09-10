@@ -1,6 +1,13 @@
+<?php
+/*
+ Template Name: Index
+ *
+*/
+?>
+
 <?php get_header(); ?>
 
-			<div id="content">
+			<div id="content" class="container page-index">
 
 				<div id="inner-content" class="wrap cf">
 
@@ -57,7 +64,6 @@
 
 						</main>
 
-						<?php get_sidebar(); ?>
 
 				</div>
 

@@ -11,7 +11,6 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     svgmin = require('gulp-svgmin'),
     gutil = require('gulp-util'),
-    rupture = require('rupture'),
     del = require('del');
 
 
@@ -31,8 +30,8 @@ gulp.task('watch', ['css'], function() {
     browserSync.init({proxy: {target: "http://style.loc"}});
     gulp.watch("static-src/css/**/*.styl", ['css']);
     gulp.watch("static-src/svg/**/*.svg", ['svg']);
-    // gulp.watch("static-src/html/**/*.html", ['html']);
-    gulp.watch("wp-content/themes/style/library/js/**/*.js", ['reload']);
+    gulp.watch("static-src/html/**/*.html", ['html']);
+    gulp.watch("wp-content/themes/style/**/*", ['reload']);
 });
 
 
@@ -53,7 +52,6 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(filterStylus)
     .pipe(stylus({
-      use: rupture(),
       sourcemap: {
         inline: true,
         sourceRoot: '.',
@@ -72,7 +70,7 @@ gulp.task('css', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./wp-content/themes/style/library/css'))
     .pipe(browserSync.stream());
-});   
+});
 
 
 gulp.task('svg', function() {

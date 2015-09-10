@@ -38,7 +38,7 @@ a
     text-decoration: none
   &:focus
     color gray4
-    
+
 button, input, textarea
   border none
   background none
@@ -50,13 +50,7 @@ html
   font-family sans-serif
   box-sizing border-box
   font-size 16px
-  // height 100%
-  // overflow hidden
-  +below(md)
-    &.disable-scroll
-    &.disable-scroll body
-      height 100%
-      overflow-y: hidden
+
 *
 *:before
 *:after
@@ -67,29 +61,16 @@ img
   width 100%
 
 body
-  font-family: font-serif
-  background: #eee
+  font-family: font-sans
+  background: #fff
   color gray6
   -webkit-font-smoothing: antialiased;
   overflow-x hidden
   font-size rem(16)
 
-.wrapper
-  overflow hidden
-  max-width 1402px
-  margin 0 auto
 
 .container
-  background: #fff
+  overflow hidden
+  max-width 1140px
+  margin 0 auto
   width auto!important
-  >.row
-    margin-right -16px // ie fix
-  &.main-content 
-    position: relative
-    z-index 100
-    margin-right -1px // ie fix
-.row
-  position relative
-  
-// ie bootstrap fix
-@-ms-viewport{ width: auto !important; }
