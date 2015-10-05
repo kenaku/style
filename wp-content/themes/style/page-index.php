@@ -7,63 +7,53 @@
 
 <?php get_header(); ?>
 
-			<div id="content" class="container page-index">
+			<div id="content" class="page-index">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+								<?php include('slider.php'); ?>
+									<div class="container">
+									<div class="index-catalog">
 
-								<header class="article-header">
 
-									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+										<div class="row">
+											<h1 class="page-title"><?php the_title(); ?></h1>
+												<?php
+													$args = array(
+														'sort_order' => 'ASC',
+														'sort_column' => 'menu_order',
+														'post_type' => 'page',
+														'include' => '5,19,21,23,26,28,30,32,34,36,38,40',
+														'post_status' => 'publish'
+													);
+													$categories = get_pages($args);
+													foreach ( $categories as $category ) {
+														$thumb_url = wp_make_link_relative(wp_get_attachment_url( get_post_thumbnail_id($category->ID) ));
+														$thumb = ltrim($thumb_url, '/');
+												?>
+												<a class="col-xs-4 index-category" href="<?php echo get_permalink( $category->ID ) ?>">
+													<div class="index-category__inner">
+														<div class="index-category__icon"><?php include($thumb); ?></div>
+														<h3 class="index-category__title"><?php echo $category->post_title ?></h3>
+													</div>
+												</a>
+												<?php } ?>
+										</div>
+										<a href="#" class="big-btn center">скачать каталог</a>
+										<div class="index-catalog__description">
+										  <?php the_content(); ?>
+										</div>
 
-									<p class="byline vcard">
-										<?php printf( __( 'Posted', 'bonestheme').' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.__( 'by',  'bonestheme').' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-									</p>
-
-								</header> <?php // end article header ?>
-
-								<section class="entry-content cf" itemprop="articleBody">
-									<?php
-										// the content (pretty self explanatory huh)
-										the_content();
-										/*
-										 * Link Pages is used in case you have posts that are set to break into
-										 * multiple pages. You can remove this if you don't plan on doing that.
-										 *
-										 * Also, breaking content up into multiple pages is a horrible experience,
-										 * so don't do it. While there are SOME edge cases where this is useful, it's
-										 * mostly used for people to get more ad views. It's up to you but if you want
-										 * to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
-										 *
-										 * http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
-										 *
-										*/
-										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-											'after'       => '</div>',
-											'link_before' => '<span>',
-											'link_after'  => '</span>',
-										) );
-									?>
-								</section> <?php // end article section ?>
-
-								<footer class="article-footer cf">
-
-								</footer>
-
-								<?php comments_template(); ?>
-
-							</article>
+										</div>
+									</div>
 
 							<?php endwhile; endif; ?>
 
 						</main>
-
 
 				</div>
 

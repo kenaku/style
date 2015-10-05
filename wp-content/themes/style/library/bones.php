@@ -124,21 +124,24 @@ function bones_scripts_and_styles() {
 
   if (!is_admin()) {
 
-		// modernizr (without media query polyfill)
-		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+    // modernizr (without media query polyfill)
+    wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
-		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/main.css', array(), '', 'all' );
+    // register main stylesheet
+    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/main.css', array(), '', 'all' );
 
-		// ie-only style sheet
-		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+    // ie-only style sheet
+    wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-		  wp_enqueue_script( 'comment-reply' );
+      wp_enqueue_script( 'comment-reply' );
     }
 
-		//adding scripts file in the footer
+
+    //adding scripts file in the footer
+    wp_register_script( 'owlcarousel', get_stylesheet_directory_uri() . '/library/js/libs/owl.carousel.min.js', array( 'jquery' ), '', true );
+    wp_register_script( 'scotchPanels', get_stylesheet_directory_uri() . '/library/js/libs/scotchPanels.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
@@ -153,7 +156,9 @@ function bones_scripts_and_styles() {
 		using the google cdn. That way it stays cached
 		and your site will load faster.
 		*/
-		wp_enqueue_script( 'jquery' );
+    // wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'owlcarousel' );
+		wp_enqueue_script( 'scotchPanels' );
 		wp_enqueue_script( 'bones-js' );
 
 	}

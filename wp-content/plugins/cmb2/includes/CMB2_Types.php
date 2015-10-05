@@ -467,9 +467,9 @@ class CMB2_Types {
 		return $this->input( array( 'class' => 'cmb2-text-medium', 'desc' => $this->_desc() ) );
 	}
 
-	// public function text_email() {
-	// 	return $this->input( array( 'class' => 'cmb2-text-email cmb2-text-medium', 'type' => 'email' ) );
-	// }
+	public function text_email() {
+		return $this->input( array( 'class' => 'cmb2-text-email cmb2-text-medium', 'type' => 'email' ) );
+	}
 
 	public function text_url() {
 		return $this->input( array( 'class' => 'cmb2-text-url cmb2-text-medium regular-text', 'value' => $this->field->escaped_value( 'esc_url' ) ) );

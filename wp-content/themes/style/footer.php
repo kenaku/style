@@ -1,28 +1,64 @@
+<?php global $img_dir  ?>
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-				<div id="inner-footer" class="container">
+				<div id="inner-footer" class="container footer__inner">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="footer__icon"><?php include($img_dir . 'common/phone.svg'); ?></div>
+                            <div class="footer__text">
+                                Розничный отдел:<br/>
+                                (812) 337-14-27<br/>
+                                (812) 740-18-72<br/>
+                                &nbsp;<br/>
+                                Оптовый отдел:<br/>
+                                (812) 370-81-43<br/>
+                                (812) 370-82-21<br/>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="footer__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
+                            <div class="footer__text">
+                                г. Санкт-Петербург,<br/>
+                                ул. Новолитовская, д. 15В<br/>
+                                МЦ "Аквилон", 1 этаж, <br/>
+                                секция 5<br/>
+                                <br/>
+                                Т: (812) 740-18-72<br/>
+                                e-mail: heys@yandex.ru<br/>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="footer__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
+                            <div class="footer__text">
+                                г. Санкт-Петербург,<br/>
+                                ул. Варшавская, д.3<br/>
+                                МЦ "Мебельный континент",<br/>
+                                1 корпус, з этаж, секция 332 А<br/>
+                                <br/>
+                                Т: (812) 337-14-27<br/>
+                                e-mail: heys@yandex.ru<br/>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="footer__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
+                            <div class="footer__text">
+                                г. Санкт-Петербург,<br/>
+                                ул. Варшавская, д.3<br/>
+                                МЦ "Мебельный континент",<br/>
+                                1 корпус, з этаж, секция 332 А<br/>
+                                <br/>
+                                Т: (812) 337-14-27<br/>
+                                e-mail: heys@yandex.ru<br/>
 
-					<nav role="navigation">
-						<?php wp_nav_menu(array(
-    					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
-    					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
-    					'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
-    					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
-    					'theme_location' => 'footer-links',             // where it's located in the theme
-    					'before' => '',                                 // before the menu
-    					'after' => '',                                  // after the menu
-    					'link_before' => '',                            // before each link
-    					'link_after' => '',                             // after each link
-    					'depth' => 0,                                   // limit the depth of the nav
-    					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-						)); ?>
-					</nav>
+                            </div>
+                        </div>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+                    </div>
 
 				</div>
 
 			</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 		<?php wp_footer(); ?>
 	</body>

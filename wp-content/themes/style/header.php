@@ -1,4 +1,5 @@
-<?php global $img_dir  ?>
+<?php global $img_dir ?>
+<?php global $theme_dir ?>
 
 <!doctype html>
 
@@ -32,18 +33,30 @@
             <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<?php wp_head(); ?>
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-        <div id="inner-header" class="container header__inner cf">
-          <a class="header__logo" href="/"><?php include($img_dir . 'common/logo.svg'); ?></a>
-          <div class="header__buttons">
-            <a href="#" class="header__catalog">скачать каталог</a>
-            <a href="#" class="header__contacts"><?php include($img_dir . 'common/phone.svg'); ?></a>
-            <a href="#" class="header__addresses"><?php include($img_dir . 'common/pin.svg'); ?></a>
-          </div>
-				</div>
-			</header>
+    <?php include($theme_dir . '/off-canvas.php'); ?>
+		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+      <div id="inner-header" class="container header__inner cf">
+        <a class="header__logo" href="/"><?php include($img_dir . 'common/logo.svg'); ?></a>
+        <div class="header__buttons">
+          <a href="#" class="header__catalog">скачать каталог</a>
+          <a href="#" id="toggle-phones" class="toggle-offcanvas header__contacts"><?php include($img_dir . 'common/phone.svg'); ?></a>
+          <a href="#" id="toggle-addresses" class="toggle-offcanvas header__addresses"><?php include($img_dir . 'common/pin.svg'); ?></a>
+        </div>
+			</div>
+		</header>
+    <div class="search-and-nav container cf">
+      <div class="row">
+        <div class="breadcrumbs col-sm-8"></div>
+        <div class="site-search col-sm-4">
+        <form role="search" method="get" class="site-search_form" action="<?php echo home_url( '/' ); ?>">
+          <input type="search" class="site-search__field" placeholder="Поиск по сайту" value="<?php echo get_search_query() ?>" name="s" title="Поиск по сайту" />
+          <input type="submit" class="site-search__submit" value="" />
+        </form>
+</div>
+      </div>
+    </div>

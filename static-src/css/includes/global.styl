@@ -18,27 +18,27 @@ i
 ul,ol,li
   display block
 hr
-  border-color gray3
+  border-color lightgray
 a
   text-decoration none
   outline: none;
-  color gray4
+  color darkgray
   text-decoration: none
-  transition color .3s
+  // transition color .3s ease-in-out
   &:hover
   &:active
-    color gray3
+  &:focus
+    color lightgray
     text-decoration: none
     outline: none;
-    .touch &
-      color gray4
   &:link
   &:focus
     outline: none;
     text-decoration: none
-  &:focus
-    color gray4
-
+  // &:focus
+  //   color inherit
+p
+  margin-bottom 1.5em
 button, input, textarea
   border none
   background none
@@ -63,14 +63,25 @@ img
 body
   font-family: font-sans
   background: #fff
-  color gray6
+  color darkgray
   -webkit-font-smoothing: antialiased;
-  overflow-x hidden
   font-size rem(16)
 
 
 .container
-  overflow hidden
-  max-width 1140px
+  // overflow hidden
+  width rem(1140)
   margin 0 auto
-  width auto!important
+  padding 0 rem(15)
+  // width auto!important
+
+
+.page-title
+  text-align center
+  font-size: rem(45)
+  font-weight: 500
+  margin-bottom rem(20)
+  font-style: italic
+
+svg
+  padding 2px

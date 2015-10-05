@@ -1,0 +1,23 @@
+.top-offscreen
+  background white
+  text-align: center
+  &.open
+    z-index: 1000000!important
+  &__inner
+    padding rem(40) 0
+    .top-offscreen--phones &
+      max-width rem(900)
+
+  &__icon
+    path
+      fill darkgray
+  &__header
+    font-size: rem(32)
+  &__text
+    font-size: rem(18)
+    font-weight: 500
+    .top-offscreen--phones &
+      padding rem(20) 0 0
+      line-height: rem(40)
+  &__img
+    padding rem(40) rem(30) rem(0)

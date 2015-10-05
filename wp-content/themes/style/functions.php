@@ -23,7 +23,7 @@ require_once( 'library/cyrillic.php' );
 
 
 $img_dir = substr(wp_make_link_relative(get_template_directory_uri()), 1) . "/library/images/";
-
+$theme_dir = substr(wp_make_link_relative(get_template_directory_uri()), 1);
 
 
 // Custom fields for catalog

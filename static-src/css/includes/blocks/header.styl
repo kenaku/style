@@ -2,16 +2,17 @@
   background orange
   a
     color white
+    &:hover
+      color lightgray
   &__inner
-    padding rem(20) 0
-
+    padding rem(5) rem(5) rem(5) rem(0)
   &__logo
     float left
+    svg
+      width rem(140)
+      height rem(42)
   &__buttons
     float right
-    // display flex
-    // align-items center
-    // height rem(70)
 
   svg
     padding rem(2)
@@ -22,9 +23,17 @@
     display: inline-block
     margin-left rem(15)
     vertical-align: top
+    svg
+      width rem(32)
+      height rem(32)
   &__catalog
-    font-size: rem(35)
+    font-size: rem(26)
     font-weight: 500
-    margin-top rem(7)
+    margin-top rem(5)
 
+.search-and-nav
+  padding-top rem(10)
+  padding-bottom rem(10)
 
+.toggle-offcanvas.open path
+  fill darkgray
