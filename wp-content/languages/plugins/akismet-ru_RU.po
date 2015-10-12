@@ -10,10 +10,6 @@ msgstr ""
 "X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Development (trunk)\n"
 
-#: views/start.php:78
-msgid "Log in or sign up now."
-msgstr "Войдите или зарегистрируйтесь сейчас!"
-
 #: views/start.php:64
 msgid "Already have your key? Enter it here."
 msgstr "У вас уже есть ключ? Введите его тут."
@@ -26,13 +22,13 @@ msgstr "Введите API ключ"
 msgid "Sign up with a different email address"
 msgstr "Войти с другим адресом электронной почты"
 
-#: views/start.php:57
-msgid "Use this option to use Akismet independently of your Jetpack connection."
-msgstr "Используйте эту опцию, чтобы использовать Akismet отдельно от вашего соединения Jetpack."
-
 #: views/start.php:56
 msgid "Sign up for a plan with a different email address"
 msgstr "Регистрация с тарифным планом с другим адресом электронной почты"
+
+#: views/start.php:57
+msgid "Use this option to use Akismet independently of your Jetpack connection."
+msgstr "Используйте эту опцию, чтобы использовать Akismet отдельно от вашего соединения Jetpack."
 
 #: views/start.php:50
 msgid "Use this account"
@@ -42,13 +38,13 @@ msgstr "Использовать этот аккаунт"
 msgid "Akismet eliminates spam from your site. To set up Akismet, select one of the options below."
 msgstr "Akismet предотвращает спам на вашем сайте. Чтобы начать пользоваться Akismet, выберите одну из опций ниже."
 
-#: views/start.php:18 views/start.php:32
-msgid "Akismet eliminates spam from your site."
-msgstr "Akismet предотвращает спам на вашем сайте."
-
 #: views/start.php:14
 msgid "Register for Akismet"
 msgstr "Регистрация в Akismet"
+
+#: views/start.php:18 views/start.php:32
+msgid "Akismet eliminates spam from your site."
+msgstr "Akismet предотвращает спам на вашем сайте."
 
 #: views/start.php:4
 msgid "Akismet eliminates spam from your site. Register below to get started."
@@ -58,13 +54,13 @@ msgstr "Akismet предотвращает спам на вашем сайте. 
 msgid "Akismet is now activated. Happy blogging!"
 msgstr "Akismet успешно активирован. Удачного блоггинга!"
 
+#: views/start.php:78
+msgid "Log in or sign up now."
+msgstr "Войдите или зарегистрируйтесь сейчас!"
+
 #: views/notice.php:77
 msgid "You don&#8217;t have an Akismet plan."
 msgstr "У вас еще нет подписки Akismet"
-
-#: views/notice.php:57
-msgid "Your Akismet plan has been cancelled."
-msgstr "Ваша подписка Akismet была отменена."
 
 #: views/notice.php:62
 msgid "Your Akismet subscription is suspended."
@@ -77,6 +73,10 @@ msgstr "Произошла ошибка при обработке вашего �
 #: views/notice.php:52
 msgid "Please update your payment information."
 msgstr "Пожалуйста, обновите ваши введенные данные платежа."
+
+#: views/notice.php:57
+msgid "Your Akismet plan has been cancelled."
+msgstr "Ваша подписка Akismet была отменена."
 
 #: views/notice.php:14
 msgid "<strong>Almost done</strong> - activate Akismet and say goodbye to spam"

@@ -270,4 +270,43 @@ function custom_mtypes( $m ){
 }
 add_filter( 'upload_mimes', 'custom_mtypes' );
 
+
+function my_connection_types() {
+    p2p_register_connection_type( array(
+        'name' => 'posts_to_pages',
+        'from' => 'accessories',
+        'to' => 'catalog'
+    ) );
+}
+add_action( 'p2p_init', 'my_connection_types' );
+
+function connectable_results_per_page( $args, $ctype, $post_id ) {
+    $args['p2p:per_page'] = 20;
+
+    return $args;
+}
+
+add_filter( 'p2p_connectable_args', 'connectable_results_per_page', 10, 3 );
+
+function get_connection_categories($id) {
+    $categories = get_the_terms( $id, 'accessories', '', ' / ' );
+    $categories_names = array();
+    foreach ($categories as $category) {
+       $categories_names[] = $category->name;
+    }
+    $categories_names = " (" .implode(', ',$categories_names) . ")";
+
+    return $categories_names;
+  }
+
+function append_date_to_candidate_title( $title, $post, $ctype ) {
+    if ( 'posts_to_pages' == $ctype->name && 'accessories' == $post->post_type ) {
+      $cats = get_connection_categories($post->ID);
+      $title .= $cats;
+    }
+    return $title;
+}
+
+add_filter( 'p2p_candidate_title', 'append_date_to_candidate_title', 10, 3 );
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
