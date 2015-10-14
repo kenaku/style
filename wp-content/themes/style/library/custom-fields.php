@@ -206,13 +206,13 @@ function style_register_demo_metabox() {
 	// 	'taxonomy' => 'accessories', // Taxonomy Slug
 	// ) );
 
-	$cmb_demo->add_field( array(
-    'name'    => 'Выберете совместимые комплектующие',
-    // 'desc'    => 'Set a featured term for this post.',
-    'id'      => $prefix . 'taxonomy_accessories',
-    'type'    => 'multicheck',
-    'options' => cmb2_get_term_options('accessories',array( 'orderby' => 'term_group','hide_empty' => 0 )),
-) );
+// 	$cmb_demo->add_field( array(
+//     'name'    => 'Выберете совместимые комплектующие',
+//     // 'desc'    => 'Set a featured term for this post.',
+//     'id'      => $prefix . 'taxonomy_accessories',
+//     'type'    => 'multicheck',
+//     'options' => cmb2_get_term_options('accessories',array( 'orderby' => 'term_group','hide_empty' => 0 )),
+// ) );
 
 	$cmb_demo->add_field( array(
 		'name'     => __( 'Выберете совместимые материалы' ),
