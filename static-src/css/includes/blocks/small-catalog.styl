@@ -1,0 +1,48 @@
+.small-catalog
+  text-align center
+  background lightgray
+  padding rem(18) 0 0
+  margin-bottom 80px
+  &__item
+    display inline-block
+    padding-bottom 14px
+    position relative
+    &.current:after
+      content ''
+      width 100%
+      height 3px
+      position absolute
+      bottom -3px
+      display block
+      background orange
+    svg
+      max-height rem(62)
+      max-width rem(120)
+    &:hover svg
+      g
+      path
+        stroke orange
+      .dot
+        fill orange
+        stroke none
+
+  &__icon--small svg
+    max-width rem(70)
+
+  &__title
+    position absolute
+    display none
+    color orange
+    text-align center
+    font-size 22px
+    font-weight 500
+    width 100%
+    left 0
+    // width 200px
+    // max-width 200px
+    white-space nowrap
+    top 120px
+    // transform translate(-50%,0)
+    // left 0px
+    .small-catalog__item:hover &
+      display block

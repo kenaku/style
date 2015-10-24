@@ -51,7 +51,7 @@
 		</header>
     <div class="search-and-nav container cf">
       <div class="row">
-        <div class="breadcrumbs col-sm-8"><?php get_connection_categories('190') ?></div>
+        <div class="breadcrumbs col-sm-8"></div>
         <div class="site-search col-sm-4">
         <form role="search" method="get" class="site-search_form" action="<?php echo home_url( '/' ); ?>">
           <input type="search" class="site-search__field" placeholder="Поиск по сайту" value="<?php echo get_search_query() ?>" name="s" title="Поиск по сайту" />

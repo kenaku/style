@@ -1229,5 +1229,55 @@ svg {
 .top-offscreen__img {
   padding: 2.5rem 1.875rem 0rem;
 }
+.small-catalog {
+  text-align: center;
+  background: #eee;
+  padding: 1.125rem 0 0;
+  margin-bottom: 80px;
+}
+.small-catalog__item {
+  display: inline-block;
+  padding-bottom: 14px;
+  position: relative;
+}
+.small-catalog__item.current:after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -3px;
+  display: block;
+  background: #ff881a;
+}
+.small-catalog__item svg {
+  max-height: 3.875rem;
+  max-width: 7.5rem;
+}
+.small-catalog__item:hover svg g,
+.small-catalog__item:hover svg path {
+  stroke: #ff881a;
+}
+.small-catalog__item:hover svg .dot {
+  fill: #ff881a;
+  stroke: none;
+}
+.small-catalog__icon--small svg {
+  max-width: 4.375rem;
+}
+.small-catalog__title {
+  position: absolute;
+  display: none;
+  color: #ff881a;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  width: 100%;
+  left: 0;
+  white-space: nowrap;
+  top: 120px;
+}
+.small-catalog__item:hover .small-catalog__title {
+  display: block;
+}
 
 /*# sourceMappingURL=main.css.map */
