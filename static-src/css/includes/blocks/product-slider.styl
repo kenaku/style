@@ -1,0 +1,30 @@
+.product-slider
+  padding 0 rem(10)
+  margin-bottom rem(40)
+  &__inner
+    position relative
+  &__content
+    position relative
+  &__slide
+    padding 0 rem(50)
+    max-height rem(420)
+  &__prev-btn
+  &__next-btn
+    position absolute
+    top 50%
+    z-index 1
+    margin-top rem(-60)
+    cursor pointer
+    svg
+      width rem(35)
+      height rem(80)
+  &__next-btn
+    right 0
+  &__prev-btn
+    left 0
+    transform rotate(180deg)
+  .owl-dot
+    background lightgray
+    &.active
+      background orange
+

@@ -21,7 +21,7 @@
 
 
 										<div class="row">
-											<h1 class="page-title"><?php the_title(); ?></h1>
+											<h1 class="page-title col-xs-12 "><?php the_title(); ?></h1>
 												<?php
 													$args = array(
 														'sort_order' => 'ASC',

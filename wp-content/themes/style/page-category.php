@@ -18,49 +18,57 @@
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<?php
 								$post = get_the_ID();
-								$big_icons = array(32, 28, 34, 30, 36);
+
+								include('small-catalog.php');
 							 ?>
-								<div class="small-catalog">
-									<div class="container">
-										<div class="row">
-										<?php
-											$args = array(
-												'sort_order' => 'ASC',
-												'sort_column' => 'menu_order',
-												'post_type' => 'page',
-												'include' => '5,19,21,23,26,28,30,32,34,36,38,40',
-												'post_status' => 'publish'
-											);
-											$categories = get_pages($args);
-											foreach ( $categories as $category ) {
-												$thumb_url = wp_make_link_relative(wp_get_attachment_url( get_post_thumbnail_id($category->ID) ));
-												$thumb = ltrim($thumb_url, '/');
-												if( in_array( $category->ID , $big_icons ) ){
-													$icon_class = 'small-catalog__icon--big';
-												} else {
-													$icon_class = 'small-catalog__icon--small';
-												}
-										?>
-										<a class="small-catalog__item <?php if ($post === $category->ID) echo "current" ?>" href="<?php echo get_permalink( $category->ID ) ?>">
-											<div class="small-catalog__inner">
-												<div class="small-catalog__icon <?php echo $icon_class ?>">
-													<?php include($thumb); ?>
-												</div>
+
+								<section class="category-lead container">
+									<div class="row">
+										<div class="col-xs-3 category-lead__icon">
+											<?php
+												$current_thumb =  ltrim(wp_make_link_relative(wp_get_attachment_url( get_post_thumbnail_id($post) )), '/');
+												include($current_thumb);
+											?>
+										</div>
+										<div class="col-xs-9">
+											<h1 class="category-lead__title page-title"><?php the_title(); ?></h1>
+											<div class="category-lead__content">
+												<?php the_content(); ?>
 											</div>
-										</a>
-										<h3 class="small-catalog__title"><?php echo $category->post_title ?></h3>
-										<?php } ?>
 										</div>
 									</div>
-								</div>
-								<div class="category-lead container">
-									<div class="row">
-
-
-									<h1 class="page-title"><?php the_title(); ?></h1>
-									<?php the_content(); ?>
 								</section>
-
+								<section class="products container">
+									<div class="row">
+										<?php
+										$cat = get_categories( array('type' => 'catalog') );
+										$current_cat = get_query_var('name');
+										$items = get_posts(
+									    array(
+								        'posts_per_page' => -1,
+								        'post_type' => 'catalog',
+												'tax_query' => array(array(
+									        'taxonomy' => 'catalog',
+									        'field' => 'slug',
+									        'terms' => array($current_cat)
+										    ))
+									    )
+										);
+										foreach ($items as $item) {
+										// print "<pre>"; print_r($item); print "</pre>";
+										// $big_icons = array(32, 28, 34, 30, 36 );
+										// if( in_array( $post , $big_icons )) $big_size = true;
+										// print "<pre>"; print_r(is_big($big_size)); print "</pre>";
+										 ?>
+											<a
+												class="<?php if(is_big($post)){?> col-xs-6 products__product--big <?php } else {?> col-xs-3 <?php  } ?> products__product"
+												href="/catalog/<?php echo $item->post_name ?>">
+												<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($item->ID)) ?>" alt="" class="products__thumb">
+												<div class="products__title"><?php echo $item->post_title ?></div>
+											</a>
+									<?php } ?>
+									</div>
+								</section>
 							<?php endwhile; endif; ?>
 
 						</main>

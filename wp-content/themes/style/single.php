@@ -1,30 +1,111 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<div id="content" class="container">
 
-				<div id="inner-content" class="wrap cf">
-
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="row" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php $mods = get_post_meta( get_the_ID(), '_style_group_demo'); ?>
+							<?php include('small-catalog.php'); ?>
+								<div class="container">
+									<h2 class="product__title col-xs-12"><?php the_title(); ?></h2>
+								 	<section class="product__lead">
+									 	<div class="row">
+										<?php if($mods) { ?>
+											<div class="product-slider col-xs-12">
+												<div class="product-slider__inner">
+													<div id="product-slider-content" class="product-slider__content">
+									        <?php foreach ($mods[0] as $mod) {  ?>
+									        	<div class="product-slider__slide row">
+									        		<div class="col-xs product__image"><img src="<?php echo $mod[image] ?>" alt=""></div>
+									        		<div class="col-xs-5">
+									        			<div class="product__mod-info">
+									        				<h3 class="product__mod-info__title">В данной комплектации:</h3>
+									        				<?php echo $mod[description] ?>
+								        				</div>
+								        				<?php if($post->post_content != "") { ?>
+									        			<div class="product__info">
+									        				<h3 class="product__mod-info__title">Описание:</h3>
+									        				 <?php the_content(); ?>
+									        			</div>
+									        				 <?php } ?>
+									        		</div>
+								        		</div>
+													<?php } ?>
+						        			</div>
+										      <button class="product-slider__prev-btn">
+										        <svg width="48" height="115" viewBox="0 0 48 115">
+										            <path d="M1 1l46 57.29L4.872 114" stroke="#FA7800" stroke-width="1.5" fill="none" fill-rule="evenodd"/>
+										        </svg>
+										      </button>
+										      <button class="product-slider__next-btn">
+										        <svg width="48" height="115" viewBox="0 0 48 115">
+										            <path d="M1 1l46 57.29L4.872 114" stroke="#FA7800" stroke-width="1.5" fill="none" fill-rule="evenodd"/>
+										        </svg>
+										      </button>
+						        		</div>
+											</div>
+										<?php } else { ?>
+					        			<div class="col-xs product__image"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt=""></div>
+				        				<?php if($post->post_content != "") { ?>
+						        			<div class="product__info product__info--single col-xs-4">
+						        				<h3 class="product__mod-info__title">Описание:</h3>
+						        				<?php the_content(); ?>
+						        			</div>
+					        			<?php } ?>
+										<?php } ?>
+										</div>
+							 		</section>
+								</div>
 
-							<?php
-								/*
-								 * Ah, post formats. Nature's greatest mystery (aside from the sloth).
-								 *
-								 * So this function will bring in the needed template file depending on what the post
-								 * format is. The different post formats are located in the post-formats folder.
-								 *
-								 *
-								 * REMEMBER TO ALWAYS HAVE A DEFAULT ONE NAMED "format.php" FOR POSTS THAT AREN'T
-								 * A SPECIFIC POST FORMAT.
-								 *
-								 * If you want to remove post formats, just delete the post-formats folder and
-								 * replace the function below with the contents of the "format.php" file.
-								*/
-								// get_template_part( 'post-formats/format', get_post_format() );
+								<section class="hardware">
+									<h2 class="hardware__title">Отделочные материалы для кресла «Сириус»</h2>
+									<?php
+									$materials_raws = get_connections(get_post_meta( get_the_ID(), '_style_demo_materials'));
+									foreach ($materials_raws as $material_top_cat) {
+										?>
+									<div class="hardware__top-cat">
+										<h3 class="hardware__top-cat__name">
+											<i><?php include($img_dir . 'common/accordion-arrow.svg'); ?> </i>
+											<?php echo $material_top_cat[name] ?>
+										</h3>
+										<div class="hardware__top-cat__content row">
+										<div class="col-xs-4 hardware__tabs">
+											<ul role="tablist">
 
-							?>
+												<?php
+												$i = 0;
+												foreach ($material_top_cat[sub_cat] as $sub_cat) { ?>
+												<li role="presentation" <?php if($i == 0) { ?>class="active" <?php } ?> >
+													<a href="#<?php echo $sub_cat[slug] ?>" class="hardware__tab" data-tab="<?php echo $sub_cat[id] ?> " data-toggle="tab">
+														<?php echo $sub_cat[name] ?>
+													</a>
+												</li>
+												<?php  $i++; } ?>
+											</ul>
+										</div>
+
+										<div class="col-xs-8 hardware__items">
+												<?php
+													$i = 0;
+													foreach ($material_top_cat[sub_cat] as $sub_cat) {
+													?>
+													<div id="<?php echo $sub_cat[slug] ?>" class="hardware__pane row <?php if($i == 0) { ?>active<?php } ?>" data-pane="<?php echo $sub_cat[id] ?>">
+														<?php foreach ($sub_cat['items'] as $item) {
+															?>
+															<div class="col-xs-4 hardware__item">
+																<img data-image="<?php echo $item[thumb] ?>" alt="" class="hardware__item__thumb">
+																<div class="hardware__item__title"><?php echo $item[name] ?></div>
+															</div>
+														<?php } ?>
+													</div>
+												<?php $i++;} ?>
+										</div>
+									</div>
+									<?php
+									} ?>
+								</section>
+
 
 						<?php endwhile; ?>
 
@@ -46,9 +127,7 @@
 
 					</main>
 
-					<?php get_sidebar(); ?>
 
-				</div>
 
 			</div>
 

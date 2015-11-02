@@ -309,4 +309,14 @@ function append_date_to_candidate_title( $title, $post, $ctype ) {
 
 add_filter( 'p2p_candidate_title', 'append_date_to_candidate_title', 10, 3 );
 
+function is_big($post_id){
+  $big_icons = array(32, 28, 34, 30, 36);
+  if( in_array( $post_id , $big_icons )) {
+    $big_size = true;
+  } else {
+    $big_size = false;
+  };
+  return $big_size;
+}
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

@@ -2,30 +2,27 @@
   text-align center
   background lightgray
   padding rem(18) 0 0
-  margin-bottom 80px
+  margin-bottom 62px
+  position relative
   &__item
     display inline-block
     padding-bottom 14px
-    position relative
-    &.current:after
-      content ''
-      width 100%
-      height 3px
-      position absolute
-      bottom -3px
-      display block
-      background orange
+    border-bottom 3px solid transparent
+    margin-bottom -3px
     svg
       max-height rem(62)
       max-width rem(120)
-    &:hover svg
-      g
-      path
-        stroke orange
-      .dot
-        fill orange
-        stroke none
-
+    &.current
+    &:hover
+      svg
+        g
+        path
+          stroke orange
+        .dot
+          fill orange
+          stroke none
+    &:hover
+      border-color orange
   &__icon--small svg
     max-width rem(70)
 
@@ -41,7 +38,7 @@
     // width 200px
     // max-width 200px
     white-space nowrap
-    top 120px
+    top 115px
     // transform translate(-50%,0)
     // left 0px
     .small-catalog__item:hover &

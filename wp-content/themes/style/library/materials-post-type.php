@@ -92,4 +92,55 @@ add_action( 'init', 'materials_category', 0 );
 
 
 
+function get_connections($materials_raw){
+
+	$materials_arr = array();
+	$materials_cats = array();
+	foreach ($materials_raw[0] as $material) {
+	 	$curr_cat = get_term_by('id', $material, 'materials');
+	 	$items = [];
+	 	$items_raw = get_posts(array(
+		  'post_type' => 'materials',
+		  'numberposts' => -1,
+		  'orderby' => 'menu_order',
+		  'order' => 'ASC',
+		  'tax_query' => array(
+		    array(
+		      'taxonomy' => 'materials',
+		      'field' => 'id',
+		      'terms' => $curr_cat->term_id,
+		    )
+		  )
+	  ));
+	 	foreach ($items_raw as $item) {
+	 		$thumb = wp_get_attachment_url( get_post_thumbnail_id($item->ID) );
+	 		$items[] = array(
+	 			'name' => $item->post_name,
+	 			'cat' => $curr_cat->term_id,
+	 			'thumb' => $thumb
+	 		);
+	 	}
+	 			// print "<pre>"; print_r($items); print "</pre>";
+
+	 	$materials_arr[$curr_cat->parent][] = array(
+				'id' => $curr_cat->term_id,
+				'name' => $curr_cat->name,
+				'slug' => $curr_cat->slug,
+				'items' => $items
+	 	);
+	}
+
+	foreach ($materials_arr as $materials_cat => $key) {
+		$materials_top_cat_obj = get_term_by( 'id', $materials_cat , 'materials' );
+		$materials_cats[] = array(
+			'id' => $materials_cat,
+			'name' => $materials_top_cat_obj->name,
+			'sub_cat' => $materials_arr[$materials_cat],
+		);
+	}
+	return $materials_cats;
+
+}
+
+
 ?>

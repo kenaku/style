@@ -1,6 +1,5 @@
 <?php global $img_dir ?>
 <?php global $theme_dir ?>
-
 <!doctype html>
 
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
@@ -33,7 +32,18 @@
             <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+    .top-offscreen{
+      bottom: 100%;
+      left: 0px;
+      width: 100%;
+      position: absolute;
+      z-index: 888888;
+      overflow: hidden;
+      backface-visibility: hidden;
+    }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 		<?php wp_head(); ?>
 	</head>
 
