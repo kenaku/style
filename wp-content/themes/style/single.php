@@ -33,12 +33,12 @@
 								        		</div>
 													<?php } ?>
 						        			</div>
-										      <button class="product-slider__prev-btn">
+										      <button id="prev-btn" class="product-slider__prev-btn hidden">
 										        <svg width="48" height="115" viewBox="0 0 48 115">
 										            <path d="M1 1l46 57.29L4.872 114" stroke="#FA7800" stroke-width="1.5" fill="none" fill-rule="evenodd"/>
 										        </svg>
 										      </button>
-										      <button class="product-slider__next-btn">
+										      <button id="next-btn" class="product-slider__next-btn hidden">
 										        <svg width="48" height="115" viewBox="0 0 48 115">
 										            <path d="M1 1l46 57.29L4.872 114" stroke="#FA7800" stroke-width="1.5" fill="none" fill-rule="evenodd"/>
 										        </svg>
@@ -58,10 +58,50 @@
 							 		</section>
 								</div>
 
-								<section class="hardware">
-									<h2 class="hardware__title">Отделочные материалы для кресла «Сириус»</h2>
+
+								<?php
+									$connected_accessories_raw = get_posts( array(
+									  'connected_type' => 'posts_to_pages',
+									  'connected_items' => get_queried_object(),
+									  'nopaging' => true,
+									  'suppress_filters' => false
+									) );
+									$accessories = get_accessories_connections($connected_accessories_raw);
+									if(count($accessories) > 0) {
+								?>
+									<section class="hardware">
+										<h2 class="hardware__title">Комплектующие</h2>
+										<div class="row">
 									<?php
-									$materials_raws = get_connections(get_post_meta( get_the_ID(), '_style_demo_materials'));
+										foreach ($accessories as $accessory) {
+											$big_cat = count($accessory['items']) > 2 ? true : false;
+										// print "<pre>"; print_r($accessory); print "</pre>";
+										 ?>
+										<div class="hardware__top-cat col-xs-<?php if($big_cat){?>12<?php } else { ?>6<?php } ?>">
+											<h3 class="hardware__top-cat__name">
+												<?php echo $accessory[cat_name] ?>
+											</h3>
+											<div class="hardware__top-cat__content row center-xs">
+											<?php foreach ($accessory['items'] as $item) { ?>
+												<div class="hardware__item col-xs-6">
+													<div class="hardware__item__thumb">
+														<img src="<?php echo $item[thumb]; ?>" alt="">
+													</div>
+													<div class="hardware__item__title"><?php echo $item[name]; ?></div>
+												</div>
+											<?php } ?>
+										</div>
+										</div>
+										<?php } ?>
+									</section>
+								<?php } ?>
+								<?php
+									$materials_raws = get_materials_connections(get_post_meta( get_the_ID(), '_style_demo_materials'));
+									if(count($materials_raws) > 0) {
+  						  ?>
+								<section class="hardware">
+									<h2 class="hardware__title">Отделочные материалы</h2>
+										<?php
 									foreach ($materials_raws as $material_top_cat) {
 										?>
 									<div class="hardware__top-cat">
@@ -72,15 +112,14 @@
 										<div class="hardware__top-cat__content row">
 										<div class="col-xs-4 hardware__tabs">
 											<ul role="tablist">
-
 												<?php
-												$i = 0;
-												foreach ($material_top_cat[sub_cat] as $sub_cat) { ?>
-												<li role="presentation" <?php if($i == 0) { ?>class="active" <?php } ?> >
-													<a href="#<?php echo $sub_cat[slug] ?>" class="hardware__tab" data-tab="<?php echo $sub_cat[id] ?> " data-toggle="tab">
-														<?php echo $sub_cat[name] ?>
-													</a>
-												</li>
+													$i = 0;
+													foreach ($material_top_cat[sub_cat] as $sub_cat) { ?>
+													<li role="presentation" <?php if($i == 0) { ?>class="active" <?php } ?> >
+														<a href="#<?php echo $sub_cat[slug] ?>" class="hardware__tab" data-tab="<?php echo $sub_cat[id] ?> " data-toggle="tab">
+															<?php echo $sub_cat[name] ?>
+														</a>
+													</li>
 												<?php  $i++; } ?>
 											</ul>
 										</div>
@@ -93,7 +132,7 @@
 													<div id="<?php echo $sub_cat[slug] ?>" class="hardware__pane row <?php if($i == 0) { ?>active<?php } ?>" data-pane="<?php echo $sub_cat[id] ?>">
 														<?php foreach ($sub_cat['items'] as $item) {
 															?>
-															<div class="col-xs-4 hardware__item">
+															<div class="col-xs-3 hardware__item">
 																<img data-image="<?php echo $item[thumb] ?>" alt="" class="hardware__item__thumb">
 																<div class="hardware__item__title"><?php echo $item[name] ?></div>
 															</div>
@@ -102,11 +141,9 @@
 												<?php $i++;} ?>
 										</div>
 									</div>
-									<?php
-									} ?>
+									<?php } ?>
 								</section>
-
-
+								<?php } ?>
 						<?php endwhile; ?>
 
 						<?php else : ?>

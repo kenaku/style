@@ -56,21 +56,42 @@ $('#toggle-phones').click(function() {
     return false;
 });
 
-if($("#product-slider-content").length){
+if($(".product-slider__slide").length > 1){
     $productSlider = $("#product-slider-content");
     $productSlider.owlCarousel({
       items: "1",
       loop:  true,
       mouseDrag: false,
     });
-    $('.product-slider__next-btn').click(function() {
+    $('#next-btn')
+      .click(function() {
         $productSlider.trigger('next.owl.carousel');
-    });
-    // Go to the previous item
-    $('.product-slider__prev-btn').click(function() {
-        $productSlider.trigger('prev.owl.carousel');
-    });
+      })
+      .removeClass('hidden')
 
+    // Go to the previous item
+    $('#prev-btn')
+      .click(function() {
+        $productSlider.trigger('prev.owl.carousel');
+      })
+      .removeClass('hidden')
+}
+
+if($('.hardware')){
+    $('.hardware__tab').click(function () {
+      $dataPane = $(this).data('tab');
+      $target = $('[data-pane='+ $dataPane +'] img');
+      lazyImages($target);
+    })
+    $target = $('.hardware__pane.active img');
+
+    lazyImages($target);
+
+    function lazyImages($id) {
+      $id.each(function(index, value){
+        $(this).attr('src', $(this).data('image'));
+      });
+    }
 }
 
 })

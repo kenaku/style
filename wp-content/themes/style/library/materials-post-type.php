@@ -92,7 +92,7 @@ add_action( 'init', 'materials_category', 0 );
 
 
 
-function get_connections($materials_raw){
+function get_materials_connections($materials_raw){
 
 	$materials_arr = array();
 	$materials_cats = array();
@@ -113,11 +113,11 @@ function get_connections($materials_raw){
 		  )
 	  ));
 	 	foreach ($items_raw as $item) {
-	 		$thumb = wp_get_attachment_url( get_post_thumbnail_id($item->ID) );
+			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID ), 'square' );
 	 		$items[] = array(
 	 			'name' => $item->post_name,
 	 			'cat' => $curr_cat->term_id,
-	 			'thumb' => $thumb
+	 			'thumb' => $thumb[0]
 	 		);
 	 	}
 	 			// print "<pre>"; print_r($items); print "</pre>";
