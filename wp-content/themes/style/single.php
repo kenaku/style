@@ -46,7 +46,10 @@
 												<div class="product-slider__inner">
 													<div id="product-slider-content" class="product-slider__content">
 									        	<div class="product-slider__slide row">
-															<div class="col-xs product__image"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt=""></div>
+															<div class="col-xs product__image">
+																<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'large'); ?>
+																<img src="<?php echo $thumb[0] ?>" alt="">
+															</div>
 						        				<?php if($post->post_content != "") { ?>
 								        			<div class="product__info product__info--single col-xs-4">
 								        				<h3 class="product__mod-info__title">Описание:</h3>
@@ -54,9 +57,11 @@
 								        			</div>
 							        			<?php } ?>
 								        		</div>
-									        <?php foreach ($mods[0] as $mod) {  ?>
+									        <?php foreach ($mods[0] as $mod) {
+									        	$thumb = wp_get_attachment_image_src( $mod[image_id], 'large');
+									        	?>
 									        	<div class="product-slider__slide row">
-									        		<div class="col-xs product__image"><img src="<?php echo $mod[image] ?>" alt=""></div>
+									        		<div class="col-xs product__image"><img src="<?php echo $thumb[0] ?>" alt=""></div>
 									        		<div class="col-xs-5 product__mod-info">
 								        				<h3 class="product__mod-info__title">В данной комплектации:</h3>
 								        				<?php echo $mod[description] ?>

@@ -55,15 +55,12 @@
 									    )
 										);
 										foreach ($items as $item) {
-										// print "<pre>"; print_r($item); print "</pre>";
-										// $big_icons = array(32, 28, 34, 30, 36 );
-										// if( in_array( $post , $big_icons )) $big_size = true;
-										// print "<pre>"; print_r(is_big($big_size)); print "</pre>";
+										$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'medium' );
 										 ?>
 											<a
 												class="<?php if(is_big($post)){?> col-xs-3 products__product--big <?php } else {?> col-xs-3 <?php  } ?> products__product"
 												href="/catalog/<?php echo $item->post_name ?>">
-												<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($item->ID)) ?>" alt="" class="products__thumb">
+												<img src="<?php echo $thumb[0] ?>" alt="" class="products__thumb">
 												<div class="products__title"><?php echo $item->post_title ?></div>
 											</a>
 									<?php } ?>
