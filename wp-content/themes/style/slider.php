@@ -2,7 +2,6 @@
  	<div class="container">
 		<div class="row index-slider__inner">
 			<div id="index-slider-content"class="col-xs-12 index-slider__content">
-        <div class="index-slider__slide"><img src="wp-content/themes/style/library/images/banner1.png"></div>
         <div class="index-slider__slide"><img src="wp-content/themes/style/library/images/banner.png"></div>
 				<div class="index-slider__slide"><img src="wp-content/themes/style/library/images/banner1.png"></div>
       </div>

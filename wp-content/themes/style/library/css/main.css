@@ -1702,7 +1702,6 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #eee;
   text-decoration: none;
   outline: none;
 }
@@ -1751,10 +1750,9 @@ body {
 }
 .page-title {
   text-align: center;
-  font-size: 2.8125rem;
+  font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 1.25rem;
-  font-style: italic;
 }
 svg {
   padding: 2px;
@@ -1784,6 +1782,7 @@ svg {
 .header svg {
   padding: 0.125rem;
 }
+.header__phone,
 .header__catalog,
 .header__contacts,
 .header__addresses {
@@ -1792,6 +1791,7 @@ svg {
   margin-left: 0.9375rem;
   vertical-align: top;
 }
+.header__phone svg,
 .header__catalog svg,
 .header__contacts svg,
 .header__addresses svg {
@@ -1803,12 +1803,25 @@ svg {
   font-weight: 500;
   margin-top: 0.3125rem;
 }
+.header__phone {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  margin-top: 0.875rem;
+  margin-right: 1.25rem;
+}
 .search-and-nav {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
+.site-search__field {
+  padding-left: 0.625rem;
+}
 .toggle-offcanvas.open path {
   fill: #333;
+}
+.breadcrumbs {
+  font-size: 1.375rem;
+  font-weight: 500;
 }
 .footer {
   background: #eee;
@@ -1843,7 +1856,7 @@ svg {
 .index-slider {
   background: #eee;
   padding: 1.875rem 0 3.125rem 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 .index-slider__inner {
   position: relative;
@@ -1889,13 +1902,13 @@ svg {
 }
 .index-category__inner {
   background: #eee;
-  padding: 1.875rem 0 1.25rem;
+  padding: 1.875rem 0.625rem 1.25rem;
 }
 .index-category:hover .index-category__inner {
   background: #fff;
 }
 .index-category__title {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 500;
   margin-top: 1.25rem;
   line-height: 2rem;
@@ -1909,7 +1922,9 @@ svg {
 .index-category:hover path {
   stroke: #ff881a;
 }
-.index-category:hover .dot {
+.index-category:hover .dot,
+.index-category:hover circle:not(.not),
+.index-category:hover ellipse:not(.not) {
   fill: #ff881a;
   stroke: none;
 }
@@ -1957,11 +1972,23 @@ svg {
   padding: 2.5rem 1.875rem 0rem;
 }
 .small-catalog {
+  width: 100%;
   text-align: center;
   background: #eee;
   padding: 1.125rem 0 0;
   margin-bottom: 62px;
   position: relative;
+}
+.small-catalog__inner {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .small-catalog__item {
   display: inline-block;
@@ -1981,6 +2008,13 @@ svg {
 }
 .small-catalog__item.current svg .dot,
 .small-catalog__item:hover svg .dot {
+  fill: #ff881a;
+  stroke: none;
+}
+.small-catalog__item.current svg circle:not(.not),
+.small-catalog__item:hover svg circle:not(.not),
+.small-catalog__item.current svg ellipse:not(.not),
+.small-catalog__item:hover svg ellipse:not(.not) {
   fill: #ff881a;
   stroke: none;
 }
@@ -2055,16 +2089,82 @@ svg {
   height: 250px;
   width: auto;
 }
+.products__product--big .products__thumb {
+  height: 8.75rem;
+}
 .products__title {
   margin-top: 15px;
   font-size: 28px;
+}
+.product {
+  position: relative;
+}
+.product__nav {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 98%;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.product__nav__prev,
+.product__nav__next {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  line-height: 0.8125rem;
+  text-align: right;
+}
+.product__nav__prev span,
+.product__nav__next span,
+.product__nav__prev i,
+.product__nav__next i {
+  display: inline-block;
+}
+.product__nav__prev i,
+.product__nav__next i {
+  margin-top: 0.125rem;
+}
+.product__nav svg {
+  margin-left: 0.3125rem;
+}
+.product__nav svg path {
+  stroke-width: 1.5;
+  stroke: #ff881a;
+  fill: none;
+}
+.product__nav__prev {
+  text-align: left;
+}
+.product__nav__prev svg {
+  margin-left: 0rem;
+  margin-right: 0.3125rem;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 .product__lead {
   margin-bottom: 3.125rem;
 }
 .product__title {
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2.75rem;
   color: #ff881a;
   line-height: 1;
   text-align: center;
@@ -2085,11 +2185,8 @@ svg {
 }
 .product__image img {
   width: auto !important;
-  height: auto;
-  max-height: 25rem;
-}
-.product__mod-info {
-  margin-bottom: 0.625rem;
+  max-width: 95%;
+  height: 13.75rem;
 }
 .product__mod-info__title {
   font-weight: 700;
@@ -2105,6 +2202,7 @@ svg {
 }
 .hardware {
   width: 100%;
+  margin-bottom: 1.25rem;
 }
 .hardware__title {
   display: block;
@@ -2120,8 +2218,25 @@ svg {
   margin-bottom: 0.4375rem;
   padding-left: 1.25rem;
   background: #eee;
-  font-size: 1.75rem;
-  line-height: 3.125rem;
+  font-size: 1.375rem;
+  line-height: 2.5rem;
+}
+.hardware__top-cat__name svg {
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  width: 0.75rem;
+  height: 1rem;
+}
+.hardware__top-cat.active .hardware__top-cat__name svg {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 .hardware__tabs {
   padding-left: 1.25rem;
@@ -2132,6 +2247,9 @@ svg {
   display: block;
   font-size: 1.25rem;
   font-weight: 500;
+}
+li.active .hardware__tab {
+  color: #ff881a;
 }
 .hardware__item {
   margin-bottom: 0.625rem;
@@ -2158,6 +2276,10 @@ svg {
   max-height: 100%;
   width: auto;
 }
+#materials .hardware__item__thumb {
+  height: 6.875rem;
+  width: 100%;
+}
 .hardware__pane {
   display: none;
 }
@@ -2178,7 +2300,6 @@ svg {
 }
 .product-slider__slide {
   padding: 0 3.125rem;
-  max-height: 26.25rem;
 }
 .product-slider__prev-btn,
 .product-slider__next-btn {

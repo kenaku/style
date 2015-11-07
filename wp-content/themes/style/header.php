@@ -53,6 +53,7 @@
       <div id="inner-header" class="container header__inner cf">
         <a class="header__logo" href="/"><?php include($img_dir . 'common/logo.svg'); ?></a>
         <div class="header__buttons">
+          <a href="tel:+78123371427" class="header__phone">(812) 337-14-27</a>
           <a href="#" class="header__catalog">скачать каталог</a>
           <a href="#" id="toggle-phones" class="toggle-offcanvas header__contacts"><?php include($img_dir . 'common/phone.svg'); ?></a>
           <a href="#" id="toggle-addresses" class="toggle-offcanvas header__addresses"><?php include($img_dir . 'common/pin.svg'); ?></a>
@@ -61,7 +62,7 @@
 		</header>
     <div class="search-and-nav container cf">
       <div class="row">
-        <div class="breadcrumbs col-sm-8"></div>
+        <div class="breadcrumbs col-sm-8">Производство и продажа офисных кресел, стульев и диванов</div>
         <div class="site-search col-sm-4">
         <form role="search" method="get" class="site-search_form" action="<?php echo home_url( '/' ); ?>">
           <input type="search" class="site-search__field" placeholder="Поиск по сайту" value="<?php echo get_search_query() ?>" name="s" title="Поиск по сайту" />

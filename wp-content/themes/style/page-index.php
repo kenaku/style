@@ -35,7 +35,7 @@
 														$thumb_url = wp_make_link_relative(wp_get_attachment_url( get_post_thumbnail_id($category->ID) ));
 														$thumb = ltrim($thumb_url, '/');
 												?>
-												<a class="col-xs-4 index-category" href="<?php echo get_permalink( $category->ID ) ?>">
+												<a class="col-xs-3 index-category" href="<?php echo get_permalink( $category->ID ) ?>">
 													<div class="index-category__inner">
 														<div class="index-category__icon"><?php include($thumb); ?></div>
 														<h3 class="index-category__title"><?php echo $category->post_title ?></h3>

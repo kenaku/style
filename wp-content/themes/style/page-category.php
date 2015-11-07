@@ -61,7 +61,7 @@
 										// print "<pre>"; print_r(is_big($big_size)); print "</pre>";
 										 ?>
 											<a
-												class="<?php if(is_big($post)){?> col-xs-6 products__product--big <?php } else {?> col-xs-3 <?php  } ?> products__product"
+												class="<?php if(is_big($post)){?> col-xs-3 products__product--big <?php } else {?> col-xs-3 <?php  } ?> products__product"
 												href="/catalog/<?php echo $item->post_name ?>">
 												<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($item->ID)) ?>" alt="" class="products__thumb">
 												<div class="products__title"><?php echo $item->post_title ?></div>

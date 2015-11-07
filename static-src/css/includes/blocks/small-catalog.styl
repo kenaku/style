@@ -1,9 +1,14 @@
 .small-catalog
+  width 100%
   text-align center
   background lightgray
   padding rem(18) 0 0
   margin-bottom 62px
   position relative
+  &__inner
+    display flex
+    align-items center
+    justify-content center
   &__item
     display inline-block
     padding-bottom 14px
@@ -21,6 +26,11 @@
         .dot
           fill orange
           stroke none
+        circle:not(.not)
+        ellipse:not(.not)
+          fill orange
+          stroke none
+
     &:hover
       border-color orange
   &__icon--small svg

@@ -1,6 +1,6 @@
 <section class="small-catalog">
   <div class="container">
-    <div class="row">
+    <div class="row small-catalog__inner">
     <?php
       $args = array(
         'sort_order' => 'ASC',

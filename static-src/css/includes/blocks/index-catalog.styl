@@ -1,28 +1,28 @@
 .index-catalog
-  text-align: center
+  text-align center
   // max-width rem(900)
   margin 0 auto
   &__description
     margin rem(80) auto rem(80)
     text-align justify
     max-width rem(700)
-    font-size: rem(18)
+    font-size rem(18)
 .index-category
   margin-bottom rem(20)
   min-height rem(272)
   max-height rem(272)
   &__inner
-    background: lightgray
-    padding rem(30) 0 rem(20)
+    background lightgray
+    padding rem(30) rem(10) rem(20)
     .index-category:hover &
       background white
   &__title
-    font-size: rem(24)
-    font-weight: 500
+    font-size rem(18)
+    font-weight 500
     margin-top rem(20)
-    line-height: rem(32)
+    line-height rem(32)
     height rem(64)
-    overflow: hidden
+    overflow hidden
     .index-category:hover &
       color orange
   &:hover
@@ -30,5 +30,7 @@
     path
       stroke orange
     .dot
+    circle:not(.not)
+    ellipse:not(.not)
       fill orange
       stroke none

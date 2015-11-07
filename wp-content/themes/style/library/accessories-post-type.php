@@ -97,7 +97,7 @@ function get_accessories_connections($accessories_raw) {
 		$terms = get_the_terms($accessory, 'accessories' );
 
 		if($terms[0]->parent == 0){
-			$accessories[$terms[0]->term_id] = array(
+			$accessories[$terms[0]->term_id]['cat_info'] = array(
 				'cat_id' => $terms[0]->term_id,
 				'cat_name' => $terms[0]->name,
 			);
@@ -107,7 +107,7 @@ function get_accessories_connections($accessories_raw) {
 			);
 		} else {
 			$parent = get_term_by( 'id', $terms[0]->parent , 'accessories' );
-	  	$accessories[$parent->term_id] = array(
+	  	$accessories[$parent->term_id]['cat_info'] = array(
 				'cat_id' => $parent->term_id,
 				'cat_name' => $parent->name,
 			);
