@@ -12,7 +12,7 @@
                   Т: (812) 740-18-72<br/>
                   e-mail: heys@yandex.ru<br/>
               </div>
-              <img src="<?php echo $img_dir . 'schema2.gif' ?>" alt="" class="top-offscreen__img">
+              <img src="/<?php echo $img_dir . 'schema2.gif' ?>" alt="" class="top-offscreen__img">
           </div>
           <div class="col-sm-4">
               <div class="top-offscreen__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
@@ -25,7 +25,7 @@
                   Т: (812) 337-14-27<br/>
                   e-mail: heys@yandex.ru<br/>
               </div>
-              <img src="<?php echo $img_dir . 'schema3.gif' ?>" alt="" class="top-offscreen__img">
+              <img src="/<?php echo $img_dir . 'schema3.gif' ?>" alt="" class="top-offscreen__img">
           </div>
           <div class="col-sm-4">
               <div class="top-offscreen__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
@@ -38,7 +38,7 @@
                   Т: (812) 337-14-27<br/>
                   e-mail: heys@yandex.ru<br/>
               </div>
-              <img src="<?php echo $img_dir . 'schema3.gif' ?>" alt="" class="top-offscreen__img">
+              <img src="/<?php echo $img_dir . 'schema3.gif' ?>" alt="" class="top-offscreen__img">
           </div>
         </div>
       </div>

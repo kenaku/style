@@ -62,7 +62,18 @@
 		</header>
     <div class="search-and-nav container cf">
       <div class="row">
-        <div class="breadcrumbs col-sm-8">Производство и продажа офисных кресел, стульев и диванов</div>
+        <div class="breadcrumbs col-sm-8">
+        <?php if(is_front_page()){ ?>
+          Производство и продажа офисных кресел, стульев и диванов
+        <?php } else {?>
+          <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+              <?php if(function_exists('bcn_display'))
+              {
+                  bcn_display();
+              } ?>
+          </div>
+        <?php } ?>
+        </div>
         <div class="site-search col-sm-4">
         <form role="search" method="get" class="site-search_form" action="<?php echo home_url( '/' ); ?>">
           <input type="search" class="site-search__field" placeholder="Поиск по сайту" value="<?php echo get_search_query() ?>" name="s" title="Поиск по сайту" />
