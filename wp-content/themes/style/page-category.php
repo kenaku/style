@@ -26,7 +26,7 @@
 									<div class="row">
 										<div class="col-xs-3 category-lead__icon">
 											<?php
-												$current_thumb =  ltrim(wp_make_link_relative(wp_get_attachment_url( get_post_thumbnail_id($post) )), '/');
+												$current_thumb = ltrim(wp_make_link_relative(wp_get_attachment_url( get_post_thumbnail_id($post) )), '/');
 												include($current_thumb);
 											?>
 										</div>
@@ -57,9 +57,10 @@
 										foreach ($items as $item) {
 										$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'medium' );
 										 ?>
+
 											<a
 												class="<?php if(is_big($post)){?> col-xs-3 products__product--big <?php } else {?> col-xs-3 <?php  } ?> products__product"
-												href="/catalog/<?php echo $item->post_name ?>">
+												href="/catalog/<?php echo $current_cat; ?>/<?php echo $item->post_name ?>">
 												<img src="<?php echo $thumb[0] ?>" alt="" class="products__thumb">
 												<div class="products__title"><?php echo $item->post_title ?></div>
 											</a>

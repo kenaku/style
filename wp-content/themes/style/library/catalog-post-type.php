@@ -1,7 +1,13 @@
 <?php
 
+global $wp_rewrite;
+$projet_structure = '/%catalog_term%';
+$wp_rewrite->add_rewrite_tag("%catalog_term%", '([^/]+)', "catalog=");
+$wp_rewrite->add_permastruct('catalog', $projet_structure, false);
 
 // Register Custom Post Type
+add_action( 'init', 'catalog_post_type' );
+
 function catalog_post_type() {
 
 	$labels = array(
@@ -22,10 +28,8 @@ function catalog_post_type() {
 		'not_found_in_trash'  => 'В удаленных не нашлось',
 	);
 	$rewrite = array(
-		'slug'                => '',
-		'with_front'          => true,
-		'pages'               => true,
-		'feeds'               => true,
+		'slug' => 'catalog/%catalog_term%',
+		'with_front' => false,
 	);
 	$args = array(
 		'label'               => 'Позиция',
@@ -42,7 +46,7 @@ function catalog_post_type() {
 		'show_in_admin_bar'   => true,
 		'show_in_nav_menus'   => true,
 		'can_export'          => true,
-		'has_archive'         => '',
+		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'rewrite'             => $rewrite,
@@ -51,8 +55,21 @@ function catalog_post_type() {
 	register_post_type( 'catalog', $args );
 
 }
-add_action( 'init', 'catalog_post_type', 0 );
+function my_rewrite_flush() {
+    catalog_post_type();
+    flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'my_rewrite_flush' );
 
+add_filter('post_type_link', 'catalog_permalink_structure', 10, 4);
+function catalog_permalink_structure($post_link, $post, $leavename, $sample)
+{
+    if ( false !== strpos( $post_link, '%catalog_term%' ) ) {
+        $event_type_term = get_the_terms( $post->ID, 'catalog' );
+    		$post_link = str_replace( '%catalog_term%', array_pop( $event_type_term )->slug, $post_link);
+    }
+    return $post_link;
+}
 
 // Register Custom Taxonomy
 function catalog_category() {

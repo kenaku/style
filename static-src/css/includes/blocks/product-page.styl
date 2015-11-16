@@ -64,6 +64,13 @@
   &__info--single
     margin-left rem(12)
 
+  &__description
+    width 100%
+    &__title
+      font-size rem(30)
+    &__content
+      font-size rem(18)
+      padding-left rem(20)
 .hardware
   width 100%
   margin-bottom rem(20)
@@ -72,8 +79,8 @@
     background orange
     color white
     font-style italic
-    line-height rem(60)
-    font-size rem(40)
+    line-height rem(40)
+    font-size rem(26)
     text-align center
     margin-bottom rem(10)
   &__top-cat
@@ -81,8 +88,8 @@
       margin-bottom rem(7)
       padding-left rem(20)
       background lightgray
-      font-size rem(22)
-      line-height rem(40)
+      font-size rem(20)
+      line-height rem(35)
       // a
       //   .hardware__top-cat.active &
       //     pointer-events none
@@ -103,16 +110,17 @@
   &__tab
     margin-bottom rem(5)
     display block
-    font-size rem(20)
-    font-weight 500
+    font-size rem(18)
+    font-weight 400
     li.active &
       color orange
   &__item
     margin-bottom rem(10)
     &__title
       text-align center
-      font-weight 500
+      font-weight 400
       font-size rem(18)
+      margin-top 2px
     &__thumb
       height rem(200)
       width auto
@@ -129,3 +137,4 @@
     display none
     &.active
       display flex
+

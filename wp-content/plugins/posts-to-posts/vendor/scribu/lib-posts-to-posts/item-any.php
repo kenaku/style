@@ -6,9 +6,7 @@ class P2P_Item_Any extends P2P_Item {
 
 	function get_permalink() {}
 
-  function get_title() {}
-
-	function get_category() {}
+	function get_title() {}
 
 	function get_object() {
 		return 'any';

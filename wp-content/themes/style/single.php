@@ -8,55 +8,43 @@
 							<?php $mods = get_post_meta( get_the_ID(), '_style_group_demo'); ?>
 							<?php include('small-catalog.php'); ?>
 								<div class="container product">
-								<div class="product__nav">
+									<div class="product__nav">
+										<?php
+											$next_link = '
+												<div class="product__nav__next">
+													<span>Следущая<br>модель</span>
+													<i>
+														<svg width="14" height="32" viewBox="0 0 14 32">
+															<path d="M1.147 1.37L13 16.322 2.145 30.863"/>
+														</svg>
+													</i>
+												</div>
+											';
 
-								<?php
-								$next_link = '
-									<div class="product__nav__next">
-										<span>Следущая<br>модель</span>
-										<i>
-											<svg width="14" height="32" viewBox="0 0 14 32">
-												<path d="M1.147 1.37L13 16.322 2.145 30.863"/>
-											</svg>
-										</i>
+											$prev_link = '
+												<div class="product__nav__prev">
+													<i>
+														<svg width="14" height="32" viewBox="0 0 14 32">
+															<path d="M1.147 1.37L13 16.322 2.145 30.863"/>
+														</svg>
+													</i>
+													<span>Предыдущая<br>модель</span>
+												</div>
+											';
+
+											next_post_link('%link', $prev_link);
+											previous_post_link('%link', $next_link);
+										?>
+
 									</div>
-								';
-
-								$prev_link = '
-									<div class="product__nav__prev">
-										<i>
-											<svg width="14" height="32" viewBox="0 0 14 32">
-												<path d="M1.147 1.37L13 16.322 2.145 30.863"/>
-											</svg>
-										</i>
-										<span>Предыдущая<br>модель</span>
-									</div>
-								';
-
-								next_post_link('%link', $prev_link);
-								previous_post_link('%link', $next_link);
-								?>
-
-								</div>
 									<h2 class="product__title"><?php the_title(); ?></h2>
+
 								 	<section class="product__lead">
 									 	<div class="row">
 										<?php if($mods[0] > 0) { ?>
 											<div class="product-slider col-xs-12">
 												<div class="product-slider__inner">
 													<div id="product-slider-content" class="product-slider__content">
-									        	<div class="product-slider__slide row">
-															<div class="col-xs product__image">
-																<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'large'); ?>
-																<img src="<?php echo $thumb[0] ?>" alt="">
-															</div>
-						        				<?php if($post->post_content != "") { ?>
-								        			<div class="product__info product__info--single col-xs-4">
-								        				<h3 class="product__mod-info__title">Описание:</h3>
-								        				<?php the_content(); ?>
-								        			</div>
-							        			<?php } ?>
-								        		</div>
 									        <?php foreach ($mods[0] as $mod) {
 									        	$thumb = wp_get_attachment_image_src( $mod[image_id], 'large');
 									        	?>
@@ -83,17 +71,18 @@
 											</div>
 										<?php } else { ?>
 					        			<div class="col-xs product__image"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt=""></div>
-				        				<?php if($post->post_content != "") { ?>
-						        			<div class="product__info product__info--single col-xs-4">
-						        				<h3 class="product__mod-info__title">Описание:</h3>
-						        				<?php the_content(); ?>
-						        			</div>
-					        			<?php } ?>
 										<?php } ?>
 										</div>
 							 		</section>
 								</div>
-
+								<?php if($post->post_content != "") { ?>
+								<section id="product__description" class="product__description">
+									<h2 class="hardware__title">Описание</h2>
+									<div class="product__description__content">
+										<?php the_content(); ?>
+									</div>
+								</section>
+								<?php } ?>
 								<?php
 									$connected_accessories_raw = get_posts( array(
 									  'connected_type' => 'posts_to_pages',
@@ -104,7 +93,7 @@
 									$accessories = get_accessories_connections($connected_accessories_raw);
 									if(count($accessories) > 0) {
 									// print "<pre>"; print_r($accessories); print "</pre>";
-								?>
+									?>
 									<section id="accessories" class="hardware">
 										<h2 class="hardware__title">Комплектующие</h2>
 										<?php
