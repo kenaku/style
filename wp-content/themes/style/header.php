@@ -49,6 +49,20 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
     <?php include($theme_dir . '/off-canvas.php'); ?>
+    <div class="feedback">
+      <div class="feedback__label">Обратная связь</div>
+      <div class="feedback__inner container">
+        <div class="row">
+          <div class="feedback__inner__label col-xs-4">Обратная Связь</div>
+          <div class="feedback__form col-xs-4">
+            <?php echo do_shortcode('[contact-form-7 id="2057" title="feedback"]'); ?>
+          </div>
+        </div>
+        <button class="feedback__close">
+          <?php include($img_dir . 'common/close.svg') ?>
+        </button>
+      </div>
+    </div>
 		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
       <div id="inner-header" class="container header__inner cf">
         <a class="header__logo" href="/"><?php include($img_dir . 'common/logo.svg'); ?></a>

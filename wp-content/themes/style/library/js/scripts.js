@@ -109,6 +109,12 @@ if($('.hardware')){
     })
 }
 
+  $('.feedback__label').click(function () {
+    $(this).parent().addClass('open')
+  })
+  $('.feedback__close').click(function () {
+    $('.feedback').removeClass('open')
+  })
 
 })
 

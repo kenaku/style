@@ -1767,7 +1767,7 @@ svg {
   color: #eee;
 }
 .header__inner {
-  padding: 0.3125rem 0.3125rem 0.3125rem 0rem;
+  padding: 0.3125rem 0.75rem 0.3125rem 0.625rem;
 }
 .header__logo {
   float: left;
@@ -1971,6 +1971,109 @@ svg {
 }
 .top-offscreen__img {
   padding: 2.5rem 1.875rem 0rem;
+}
+.feedback {
+  width: 100%;
+  height: 498px;
+  background: #ff881a;
+  position: absolute;
+  right: 0;
+  top: 110px;
+  z-index: 1000;
+  color: #fff;
+  -webkit-transform: translate(100%, 0);
+      -ms-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+.feedback.open {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.feedback__label {
+  line-height: 40px;
+  font-size: 24px;
+  padding: 0 20px;
+  background: #ff881a;
+  position: absolute;
+  top: 215px;
+  left: -118px;
+  border-radius: 20px 20px 0 0;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  cursor: pointer;
+}
+.feedback__inner {
+  position: relative;
+  padding: 1.25rem 0.625rem;
+}
+.feedback__inner__label {
+  font-size: 30px;
+  font-weight: 500;
+}
+.feedback__close {
+  position: absolute;
+  right: 15px;
+  top: 25px;
+}
+.feedback__close svg {
+  width: 26px;
+  height: 26px;
+}
+.feedback__form {
+  padding-top: 5px;
+}
+.feedback__form ::-webkit-input-placeholder {
+  color: #333;
+}
+.feedback__form ::-moz-placeholder {
+  color: #333;
+}
+.feedback__form :-moz-placeholder {
+  color: #333;
+}
+.feedback__form :-ms-input-placeholder {
+  color: #333;
+}
+.feedback__form .wpcf7-form-control-wrap {
+  position: relative;
+}
+.feedback__form .wpcf7-not-valid-tip {
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  top: 27px;
+}
+.feedback__form .wpcf7-response-output {
+  display: none !important;
+}
+.feedback__form .ajax-loader {
+  width: 16px;
+  height: 16px;
+}
+.feedback input[type='text'],
+.feedback input[type='email'],
+.feedback input[type='submit'],
+.feedback textarea {
+  background: #fff;
+  padding: 0.3125rem 0.9375rem;
+  width: 100%;
+  color: #333;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+.feedback input[type='submit'] {
+  width: auto;
+}
+.feedback textarea {
+  resize: none;
 }
 .small-catalog {
   width: 100%;
