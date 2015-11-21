@@ -78,7 +78,7 @@ if($(".product-slider__slide").length > 1){
       .removeClass('hidden')
 }
 
-if($('.hardware')){
+if($('.hardware').length){
     $('.hardware__tab').click(function () {
       $dataPane = $(this).data('tab');
       $target = $('[data-pane='+ $dataPane +'] img');
@@ -116,6 +116,11 @@ if($('.hardware')){
     $('.feedback').removeClass('open')
   })
 
+  if($(".cat-breadcrumb").length){
+    var $catBc = $(".cat-breadcrumb");
+    var $catBcUrl = $catBc.attr('href').replace('catalog/%catalog_term%/', '');
+    $catBc.attr('href', $catBcUrl);
+  }
 })
 
 
