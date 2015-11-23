@@ -55,7 +55,7 @@
         <div class="row">
           <div class="feedback__inner__label col-xs-4">Обратная Связь</div>
           <div class="feedback__form col-xs-4">
-            <?php echo do_shortcode('[contact-form-7 id="2057" title="feedback"]'); ?>
+            <?php echo do_shortcode('[contact-form-7 title="feedback"]'); ?>
           </div>
         </div>
         <button class="feedback__close">
