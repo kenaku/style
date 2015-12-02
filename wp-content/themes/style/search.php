@@ -6,7 +6,7 @@
 
 					<main id="main" role="main" class="row">
           <?php include('small-catalog.php'); ?>
-						<h1 class="archive-title page-title col-xs-12"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+						<h1 class="archive-title page-title col-xs-12"><span><?php _e( 'Результаты поиска:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
             <?php
               if (have_posts()) : while (have_posts()) : the_post();
