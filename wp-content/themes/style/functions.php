@@ -45,6 +45,7 @@ function bones_ahoy() {
 
   // Подгрузка кастомных разделов
 
+  require_once( 'library/slider-post-type.php' );
   require_once( 'library/catalog-post-type.php' );
   require_once( 'library/accessories-post-type.php' );
   require_once( 'library/materials-post-type.php' );
