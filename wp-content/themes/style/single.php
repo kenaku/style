@@ -75,14 +75,7 @@
 										</div>
 							 		</section>
 								</div>
-								<?php if($post->post_content != "") { ?>
-								<section id="product__description" class="product__description">
-									<h2 class="hardware__title">Описание</h2>
-									<div class="product__description__content">
-										<?php the_content(); ?>
-									</div>
-								</section>
-								<?php } ?>
+								<section class="product__info-tabs">
 								<?php
 									$connected_accessories_raw = get_posts( array(
 									  'connected_type' => 'posts_to_pages',
@@ -91,18 +84,54 @@
 									  'suppress_filters' => false
 									) );
 									$accessories = get_accessories_connections($connected_accessories_raw);
+									$materials_raws = get_materials_connections(get_post_meta( get_the_ID(), '_style_demo_materials'));
+									$info_tabs = array();
+									if($post->post_content != "") { $info_tabs[] = array('product__description','Описание');}
+									if(count($accessories) > 0) { $info_tabs[] =  array('product__accessories','Комплектующие');}
+									if(count($materials_raws) > 0) { $info_tabs[] =  array('product__materials','Отделочные материалы');}
+								?>
+								<ul role="tablist" class="row">
+								<?php
+									$i = 0;
+									foreach($info_tabs as $info_tab) {
+								?>
+									<li class="product__info-tab col-xs <?php if($i == 0) { ?>active<?php } ?>" role="presentation" >
+									<a
+										href="#<?php echo $info_tab[0] ?>"
+										data-tab="<?php echo $info_tab[0] ?>"
+										data-toggle="tab">
+										<?php echo $info_tab[1] ?>
+									</a>
+								<?php $i++; } ?>
+								</ul>
+								</section>
+								<?php if($post->post_content != "") { ?>
+								<section
+									id="product__description"
+									class="product__description <?php if($info_tabs[0][0] == 'product__description') { ?>active<?php } ?> "
+									data-pane="product__description"
+								>
+									<div class="product__description__content">
+										<?php the_content(); ?>
+									</div>
+								</section>
+								<?php } ?>
+								<?php
 									if(count($accessories) > 0) {
 									// print "<pre>"; print_r($accessories); print "</pre>";
 									?>
-									<section id="accessories" class="hardware">
-										<h2 class="hardware__title">Комплектующие</h2>
+									<section
+										id="product__accessories"
+										class="hardware <?php if($info_tabs[0][0] == 'product__accessories') { ?>active<?php } ?>"
+										data-pane="product__accessories"
+									>
 										<?php
 											$i = 0;
 											foreach ($accessories as $accessory) {
 											 ?>
 											<div class="hardware__top-cat">
 												<h3 class="hardware__top-cat__name">
-													<a href="cat-<?php echo $accessory[cat_info][cat_id] ?>" data-parent="#accessories">
+													<a href="cat-<?php echo $accessory[cat_info][cat_id] ?>" data-parent="#product__accessories">
 														<i><?php include($img_dir . 'common/accordion-arrow.svg'); ?> </i>
 														<?php echo $accessory[cat_info][cat_name] ?>
 		        							</a>
@@ -125,18 +154,20 @@
 									</section>
 								<?php } ?>
 								<?php
-									$materials_raws = get_materials_connections(get_post_meta( get_the_ID(), '_style_demo_materials'));
 									if(count($materials_raws) > 0) {
   						  ?>
-								<section id="materials" class="hardware">
-									<h2 class="hardware__title">Отделочные материалы</h2>
+								<section
+										id="product__materials"
+										class="hardware <?php if($info_tabs[0][0] == 'product__materials') { ?>active<?php } ?>"
+										data-pane="product__materials"
+								>
 									<?php
 									$j = 0;
 									foreach ($materials_raws as $material_top_cat) {
 										?>
 									<div class="hardware__top-cat">
 										<h3 class="hardware__top-cat__name">
-											<a href="cat-<?php echo $material_top_cat[id] ?>" data-parent="#materials">
+											<a href="cat-<?php echo $material_top_cat[id] ?>" data-parent="#product__materials">
 												<i><?php include($img_dir . 'common/accordion-arrow.svg'); ?> </i>
 												<?php echo $material_top_cat[name] ?>
 											</a>
@@ -148,7 +179,11 @@
 													$i = 0;
 													foreach ($material_top_cat[sub_cat] as $sub_cat) { ?>
 													<li role="presentation" <?php if($i == 0) { ?>class="active" <?php } ?> >
-														<a href="#<?php echo $sub_cat[slug] ?>" class="hardware__tab" data-tab="<?php echo $sub_cat[id] ?> " data-toggle="tab">
+														<a
+															href="#<?php echo $sub_cat[slug] ?>"
+															class="hardware__tab" data-tab="<?php echo $sub_cat[id] ?> "
+															data-toggle="tab"
+														>
 															<?php echo $sub_cat[name] ?>
 														</a>
 													</li>
@@ -161,7 +196,11 @@
 													$i = 0;
 													foreach ($material_top_cat[sub_cat] as $sub_cat) {
 													?>
-													<div id="<?php echo $sub_cat[slug] ?>" class="hardware__pane row <?php if($i == 0) { ?>active<?php } ?>" data-pane="<?php echo $sub_cat[id] ?>">
+													<div
+														id="<?php echo $sub_cat[slug] ?>"
+														class="hardware__pane row <?php if($i == 0) { ?>active<?php } ?>"
+														data-pane="<?php echo $sub_cat[id] ?>"
+													>
 														<?php foreach ($sub_cat['items'] as $item) {
 															?>
 															<div class="col-xs-2 hardware__item">

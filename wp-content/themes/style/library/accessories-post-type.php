@@ -90,11 +90,11 @@ function accessories_category() {
 }
 add_action( 'init', 'accessories_category', 0 );
 
-function get_accessories_connections($accessories_raw) {
+function get_accessories_connections($accessories_raw, $taxonomy = 'accessories') {
 	$accessories = array();
 	foreach ($accessories_raw as $accessory) {
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $accessory->ID ), 'medium' );
-		$terms = get_the_terms($accessory, 'accessories' );
+		$terms = get_the_terms($accessory, $taxonomy );
 
 		if($terms[0]->parent == 0){
 			$accessories[$terms[0]->term_id]['cat_info'] = array(
@@ -106,7 +106,7 @@ function get_accessories_connections($accessories_raw) {
 				'thumb' => $thumb[0],
 			);
 		} else {
-			$parent = get_term_by( 'id', $terms[0]->parent , 'accessories' );
+			$parent = get_term_by( 'id', $terms[0]->parent , $taxonomy );
 	  	$accessories[$parent->term_id]['cat_info'] = array(
 				'cat_id' => $parent->term_id,
 				'cat_name' => $parent->name,

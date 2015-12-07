@@ -1825,6 +1825,7 @@ svg {
   font-weight: 500;
 }
 .footer {
+  margin-top: 40px;
   background: #eee;
   padding: 1.5625rem;
   border-bottom: 1.875rem solid #ff881a;
@@ -2178,6 +2179,9 @@ svg {
   display: inline-block;
   vertical-align: middle;
 }
+.category-lead--alt {
+  margin-bottom: 40px;
+}
 .products__product {
   text-align: center;
   margin-bottom: 10px;
@@ -2188,6 +2192,19 @@ svg {
 }
 .products__product:hover .products__title {
   color: #333;
+}
+.products__thumb-wrap {
+  height: 160px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .products__thumb {
   width: auto;
@@ -2302,8 +2319,31 @@ svg {
 .product__info--single {
   margin-left: 0.75rem;
 }
+.product__info-tabs {
+  width: 100%;
+}
+.product__info-tab {
+  background: #eee;
+  color: #fff;
+  font-style: italic;
+  font-size: 1.625rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.product__info-tab a {
+  line-height: 2.5rem;
+  display: block;
+  width: 100%;
+}
+.product__info-tab.active {
+  background: #ff881a;
+}
 .product__description {
   width: 100%;
+  display: none;
+}
+.product__description.active {
+  display: block;
 }
 .product__description__title {
   font-size: 1.875rem;
@@ -2311,20 +2351,15 @@ svg {
 .product__description__content {
   font-size: 1.125rem;
   padding-left: 1.25rem;
+  margin-bottom: 40px;
 }
 .hardware {
   width: 100%;
   margin-bottom: 1.25rem;
+  display: none;
 }
-.hardware__title {
+.hardware.active {
   display: block;
-  background: #ff881a;
-  color: #fff;
-  font-style: italic;
-  line-height: 2.5rem;
-  font-size: 1.625rem;
-  text-align: center;
-  margin-bottom: 0.625rem;
 }
 .hardware__top-cat__name {
   margin-bottom: 0.4375rem;
@@ -2373,7 +2408,7 @@ li.active .hardware__tab {
   margin-top: 2px;
 }
 .hardware__item__thumb {
-  height: 12.5rem;
+  height: 8.75rem;
   width: auto;
   display: -webkit-flex;
   display: -ms-flexbox;

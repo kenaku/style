@@ -78,7 +78,7 @@ if($(".product-slider__slide").length > 1){
       .removeClass('hidden')
 }
 
-if($('.hardware').length){
+if($('.hardware').length && $('.single-catalog').length ){
     $('.hardware__tab').click(function () {
       $dataPane = $(this).data('tab');
       $target = $('[data-pane='+ $dataPane +'] img');

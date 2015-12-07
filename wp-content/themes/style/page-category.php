@@ -61,7 +61,9 @@
 											<a
 												class="<?php if(is_big($post)){?> col-xs-3 products__product--big <?php } else {?> col-xs-3 <?php  } ?> products__product"
 												href="/catalog/<?php echo $current_cat; ?>/<?php echo $item->post_name ?>">
-												<img src="<?php echo $thumb[0] ?>" alt="" class="products__thumb">
+												<div class="products__thumb-wrap">
+													<img src="<?php echo $thumb[0] ?>" alt="" class="products__thumb">
+												</div>
 												<div class="products__title"><?php echo $item->post_title ?></div>
 											</a>
 									<?php } ?>

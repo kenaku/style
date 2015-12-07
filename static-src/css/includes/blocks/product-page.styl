@@ -64,25 +64,40 @@
   &__info--single
     margin-left rem(12)
 
+  &__info-tabs
+    width: 100%
+
+  &__info-tab
+    background: lightgray
+    color white
+    font-style italic
+    font-size rem(26)
+    text-align center
+    margin-bottom rem(20)
+    a
+      line-height rem(40)
+      display: block
+      width: 100%
+    &.active
+      background orange
   &__description
     width 100%
+    display none
+    &.active
+      display block
+
     &__title
       font-size rem(30)
     &__content
       font-size rem(18)
       padding-left rem(20)
+      margin-bottom: 40px
 .hardware
   width 100%
   margin-bottom rem(20)
-  &__title
+  display none
+  &.active
     display block
-    background orange
-    color white
-    font-style italic
-    line-height rem(40)
-    font-size rem(26)
-    text-align center
-    margin-bottom rem(10)
   &__top-cat
     &__name
       margin-bottom rem(7)
@@ -122,7 +137,7 @@
       font-size rem(18)
       margin-top 2px
     &__thumb
-      height rem(200)
+      height rem(140)
       width auto
       display flex
       align-items center
