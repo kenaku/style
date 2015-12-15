@@ -55,14 +55,11 @@
 													<?php foreach ($materials as $accessory) { ?>
 														<div class="hardware__top-cat">
 															<h3 class="hardware__top-cat__name">
-																<a href="cat-<?php echo $accessory[cat_info][cat_id] ?>" data-parent="#materials">
-																	<i><?php include($img_dir . 'common/accordion-arrow.svg'); ?> </i>
-																	<?php echo $accessory[cat_info][cat_name] ?>
-					        							</a>
+																<?php echo $accessory[cat_info][cat_name] ?>
 															</h3>
 															<div id="cat-<?php echo $accessory[cat_info][cat_id] ?>" class="hardware__top-cat__content row">
 																<?php foreach ($accessory['items'] as $item) { ?>
-																	<div class="hardware__item col-xs-2">
+																	<div class="hardware__item col-xs-1">
 																		<div class="hardware__item__thumb">
 																			<img src="<?php echo $item[thumb]; ?>" alt="">
 																		</div>

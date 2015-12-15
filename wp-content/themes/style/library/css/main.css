@@ -2304,7 +2304,7 @@ svg {
 }
 .product__image img {
   width: auto !important;
-  max-width: 95%;
+  max-width: 100%;
   height: 13.75rem;
 }
 .product__mod-info__title {
@@ -2321,14 +2321,28 @@ svg {
 }
 .product__info-tabs {
   width: 100%;
+  padding: 0 10px;
 }
 .product__info-tab {
   background: #eee;
   color: #fff;
-  font-style: italic;
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   text-align: center;
   margin-bottom: 1.25rem;
+}
+.product__info-tab:first-child {
+  border-radius: 20px 0 0 20px;
+  border-right: 1px solid #fff;
+}
+.product__info-tab:last-child {
+  border-left: 1px solid #fff;
+  border-radius: 0 20px 20px 0;
+}
+.product__info-tab.single {
+  border-radius: 0;
+}
+.product__info-tab.single a {
+  pointer-events: none;
 }
 .product__info-tab a {
   line-height: 2.5rem;
@@ -2356,6 +2370,8 @@ svg {
 .hardware {
   width: 100%;
   margin-bottom: 1.25rem;
+}
+.single .hardware {
   display: none;
 }
 .hardware.active {
@@ -2384,6 +2400,13 @@ svg {
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+.hardware__top-cat__content {
+  padding: 20px 0;
+}
+.page-template-page-material .hardware__top-cat__content img {
+  width: 77px;
+  height: 77px;
 }
 .hardware__tabs {
   padding-left: 1.25rem;

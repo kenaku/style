@@ -49,7 +49,7 @@
 									        	$thumb = wp_get_attachment_image_src( $mod[image_id], 'large');
 									        	?>
 									        	<div class="product-slider__slide row">
-									        		<div class="col-xs product__image"><img src="<?php echo $thumb[0] ?>" alt=""></div>
+									        		<div class="col-xs product__image"><img class="fancybox" src="<?php echo $thumb[0] ?>" alt=""></div>
 									        		<div class="col-xs-5 product__mod-info">
 								        				<h3 class="product__mod-info__title">В данной комплектации:</h3>
 								        				<?php echo $mod[description] ?>
@@ -70,7 +70,9 @@
 						        		</div>
 											</div>
 										<?php } else { ?>
-					        			<div class="col-xs product__image"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt=""></div>
+					        			<div class="col-xs product__image">
+					        				<img class="fancybox" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt="">
+					        			</div>
 										<?php } ?>
 										</div>
 							 		</section>
@@ -95,7 +97,12 @@
 									$i = 0;
 									foreach($info_tabs as $info_tab) {
 								?>
-									<li class="product__info-tab col-xs <?php if($i == 0) { ?>active<?php } ?>" role="presentation" >
+									<li
+										class="
+											product__info-tab
+											col-xs <?php if($i == 0) { ?>active <?php } ?>
+											<?php if(count($info_tabs) == 1) { ?>single<?php } ?>
+											" role="presentation" >
 									<a
 										href="#<?php echo $info_tab[0] ?>"
 										data-tab="<?php echo $info_tab[0] ?>"

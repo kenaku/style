@@ -50,7 +50,7 @@
     padding rem(20)
     img
       width auto!important
-      max-width 95%
+      max-width 100%
       height rem(220)
   &__mod-info
     // margin-bottom rem(10)
@@ -66,14 +66,24 @@
 
   &__info-tabs
     width: 100%
-
+    padding: 0 10px
   &__info-tab
     background: lightgray
     color white
-    font-style italic
-    font-size rem(26)
+    // font-style italic
+    font-size rem(24)
     text-align center
     margin-bottom rem(20)
+    &:first-child
+      border-radius: 20px 0 0 20px
+      border-right: 1px solid white
+    &:last-child
+      border-left: 1px solid white
+      border-radius: 0 20px 20px 0
+    &.single
+      border-radius: 0
+      a
+        pointer-events none
     a
       line-height rem(40)
       display: block
@@ -95,7 +105,8 @@
 .hardware
   width 100%
   margin-bottom rem(20)
-  display none
+  .single &
+    display none
   &.active
     display block
   &__top-cat
@@ -108,7 +119,6 @@
       // a
       //   .hardware__top-cat.active &
       //     pointer-events none
-
       svg
         transition transform .3s ease-in-out
         transform rotate(0deg)
@@ -117,7 +127,11 @@
         height rem(16)
         .hardware__top-cat.active &
           transform rotate(90deg)
-
+    &__content
+      padding: 20px 0
+      .page-template-page-material & img
+        width: 77px
+        height: 77px
   &__tabs
     padding-left rem(20)
     margin-bottom rem(20)

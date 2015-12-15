@@ -31,19 +31,26 @@
 		<!-- <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png"> -->
             <meta name="theme-color" content="#121212">
 
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
     <style>
-    .top-offscreen{
-      bottom: 100%;
-      left: 0px;
-      width: 100%;
-      position: absolute;
-      z-index: 888888;
-      overflow: hidden;
-      backface-visibility: hidden;
-    }
+      .top-offscreen{
+        bottom: 100%;
+        left: 0px;
+        width: 100%;
+        position: absolute;
+        z-index: 888888;
+        overflow: hidden;
+        backface-visibility: hidden;
+      }
+     /* a.fancybox img {
+          border: none;
+          -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+      }
+      a.fancybox:hover img {
+          position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
+      }*/
     </style>
-    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 		<?php wp_head(); ?>
 	</head>
 

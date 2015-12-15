@@ -17,8 +17,8 @@
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<?php
-								include('small-catalog.php');
 								$post = get_the_ID();
+								include('small-catalog.php');
 							?>
 								<section class="category-lead container category-lead--alt">
 									<div class="row">
