@@ -38,41 +38,77 @@
 									</div>
 								</section>
 								<?php
-									$connected_materials_raw = get_posts( array(
-										'post_type' => 'materials',
-										'posts_per_page'   => -1,
-										'order'            => 'ASC',
-										'orderby'          => 'menu_order',
+									$connected_materials_raw = get_categories( array(
+										'taxonomy' => 'materials',
 									) );
-									$materials = get_accessories_connections($connected_materials_raw, 'materials');
-									// print "<pre>"; print_r($materials); print "</pre>";
-									?>
+									$materials_ids = array();
+									foreach ($connected_materials_raw as $material) {
+										if($material->parent != 0) {
+											$materials_ids[] = $material->cat_ID;
+										}
+									}
+									$materials_raws = get_materials_connections($materials_ids);
+								?>
 
-									<section id="materials" class="hardware">
-										<div class="container">
-											<div class="row">
-												<div class="col-xs-12">
-													<?php foreach ($materials as $accessory) { ?>
-														<div class="hardware__top-cat">
-															<h3 class="hardware__top-cat__name">
-																<?php echo $accessory[cat_info][cat_name] ?>
-															</h3>
-															<div id="cat-<?php echo $accessory[cat_info][cat_id] ?>" class="hardware__top-cat__content row">
-																<?php foreach ($accessory['items'] as $item) { ?>
-																	<div class="hardware__item col-xs-1">
-																		<div class="hardware__item__thumb">
-																			<img src="<?php echo $item[thumb]; ?>" alt="">
-																		</div>
-																		<div class="hardware__item__title"><?php echo $item[name]; ?></div>
-																	</div>
-																<?php } ?>
-															</div>
-														</div>
-														<?php } ?>
-												</div>
-											</div>
+								<div class="container">
+								<section id="materials" class="hardware">
+									<div class="row">
+									<?php
+									$j = 0;
+									foreach ($materials_raws as $material_top_cat) {
+										?>
+									<div class="hardware__top-cat">
+										<h3 class="hardware__top-cat__name">
+											<a href="cat-<?php echo $material_top_cat[id] ?>" data-parent="#product__materials">
+												<i><?php include($img_dir . 'common/accordion-arrow.svg'); ?> </i>
+												<?php echo $material_top_cat[name] ?>
+											</a>
+										</h3>
+										<div id="cat-<?php echo $material_top_cat[id] ?>" class="hardware__top-cat__content row">
+										<div class="col-xs-3 hardware__tabs">
+											<ul role="tablist">
+												<?php
+													$i = 0;
+													foreach ($material_top_cat[sub_cat] as $sub_cat) { ?>
+													<li role="presentation" <?php if($i == 0) { ?>class="active" <?php } ?> >
+														<a
+															href="#<?php echo $sub_cat[slug] ?>"
+															class="hardware__tab" data-tab="<?php echo $sub_cat[id] ?> "
+															data-toggle="tab"
+														>
+															<?php echo $sub_cat[name] ?>
+														</a>
+													</li>
+												<?php  $i++; } ?>
+											</ul>
 										</div>
-									</section>
+
+										<div class="col-xs-9 hardware__items">
+												<?php
+													$i = 0;
+													foreach ($material_top_cat[sub_cat] as $sub_cat) {
+													?>
+													<div
+														id="<?php echo $sub_cat[slug] ?>"
+														class="hardware__pane row <?php if($i == 0) { ?>active<?php } ?>"
+														data-pane="<?php echo $sub_cat[id] ?>"
+													>
+														<?php foreach ($sub_cat['items'] as $item) {
+															?>
+															<div class="col-xs-2 hardware__item">
+																<img src="<?php echo $item[thumb] ?>" alt="" class="hardware__item__thumb">
+																<div class="hardware__item__title"><?php echo $item[name] ?></div>
+															</div>
+														<?php } ?>
+													</div>
+												<?php $i++;} ?>
+										</div>
+									</div>
+									</div>
+									<?php $j++; } ?>
+									</div>
+								</section>
+								</div>
 
 							<?php endwhile; endif; ?>
 

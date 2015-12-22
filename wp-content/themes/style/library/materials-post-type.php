@@ -96,8 +96,9 @@ function get_materials_connections($materials_raw){
 
 	$materials_arr = array();
 	$materials_cats = array();
-	foreach ($materials_raw[0] as $material) {
+	foreach ($materials_raw as $material) {
 	 	$curr_cat = get_term_by('id', $material, 'materials');
+		// print "<pre>"; print_r($material); print "</pre>";
 	 	$items = [];
 	 	$items_raw = get_posts(array(
 		  'post_type' => 'materials',
@@ -120,7 +121,6 @@ function get_materials_connections($materials_raw){
 	 			'thumb' => $thumb[0]
 	 		);
 	 	}
-	 			// print "<pre>"; print_r($items); print "</pre>";
 
 	 	$materials_arr[$curr_cat->parent][] = array(
 				'id' => $curr_cat->term_id,

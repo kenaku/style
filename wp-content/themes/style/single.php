@@ -86,7 +86,8 @@
 									  'suppress_filters' => false
 									) );
 									$accessories = get_accessories_connections($connected_accessories_raw);
-									$materials_raws = get_materials_connections(get_post_meta( get_the_ID(), '_style_demo_materials'));
+									$materials_raws = get_post_meta( get_the_ID(), '_style_demo_materials');
+									$materials_raws = get_materials_connections($materials_raws[0]);
 									$info_tabs = array();
 									if($post->post_content != "") { $info_tabs[] = array('product__description','Описание');}
 									if(count($accessories) > 0) { $info_tabs[] =  array('product__accessories','Комплектующие');}

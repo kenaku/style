@@ -97,7 +97,7 @@
         </div>
         <div class="site-search col-sm-4">
         <form role="search" method="get" class="site-search_form" action="<?php echo home_url( '/' ); ?>">
-          <input type="search" class="site-search__field" placeholder="Поиск по сайту" value="<?php echo get_search_query() ?>" name="s" title="Поиск по сайту" />
+          <input type="search" class="site-search__field" placeholder="Поиск по каталогу" value="<?php echo get_search_query() ?>" name="s" title="Поиск по сайту" />
           <input type="submit" class="site-search__submit" value="" />
         </form>
 </div>

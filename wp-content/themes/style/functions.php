@@ -321,4 +321,37 @@ function is_big($post_id){
   return $big_size;
 }
 
+function get_all_materials($accessories_raw, $taxonomy = 'accessories') {
+  $accessories = array();
+  print_r($accessories_raw);
+  foreach ($accessories_raw as $accessory) {
+    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $accessory->ID ), 'medium' );
+    $terms = get_the_terms($accessory, $taxonomy );
+
+    if($terms[0]->parent == 0){
+      $accessories[$terms[0]->term_id]['cat_info'] = array(
+        'cat_id' => $terms[0]->term_id,
+        'cat_name' => $terms[0]->name,
+      );
+      $accessories[$terms[0]->term_id][items][] = array(
+        'name' => $accessory->post_title,
+        'thumb' => $thumb[0],
+      );
+    } else {
+      $parent = get_term_by( 'id', $terms[0]->parent , $taxonomy );
+      $accessories[$parent->term_id]['cat_info'] = array(
+        'cat_id' => $parent->term_id,
+        'cat_name' => $parent->name,
+      );
+      $accessories[$parent->term_id][items][] = array(
+        'name' => $accessory->post_title,
+        'thumb' => $thumb[0],
+        'category' => $terms[0]->name
+      );
+    }
+  }
+    // print "<pre>"; print_r($accessories); print "</pre>";
+  return $accessories;
+}
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
