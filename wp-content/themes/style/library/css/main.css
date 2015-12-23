@@ -1757,6 +1757,27 @@ body {
 svg {
   padding: 2px;
 }
+@font-face {
+  font-family: 'Futura PT';
+  src: url("../fonts/hinted-FuturaPT-Bold.eot");
+  src: url("../fonts/hinted-FuturaPT-Bold.eot?#iefix") format('embedded-opentype'), url("../fonts/hinted-FuturaPT-Bold.woff2") format('woff2'), url("../fonts/hinted-FuturaPT-Bold.woff") format('woff'), url("../fonts/hinted-FuturaPT-Bold.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url("../fonts/hinted-FuturaPT-Medium.eot");
+  src: url("../fonts/hinted-FuturaPT-Medium.eot?#iefix") format('embedded-opentype'), url("../fonts/hinted-FuturaPT-Medium.woff2") format('woff2'), url("../fonts/hinted-FuturaPT-Medium.woff") format('woff'), url("../fonts/hinted-FuturaPT-Medium.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url("../fonts/hinted-FuturaPT-Book.eot");
+  src: url("../fonts/hinted-FuturaPT-Book.eot?#iefix") format('embedded-opentype'), url("../fonts/hinted-FuturaPT-Book.woff2") format('woff2'), url("../fonts/hinted-FuturaPT-Book.woff") format('woff'), url("../fonts/hinted-FuturaPT-Book.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .header {
   background: #ff881a;
 }
