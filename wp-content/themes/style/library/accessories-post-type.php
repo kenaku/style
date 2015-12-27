@@ -119,32 +119,7 @@ function get_accessories_connections($accessories_raw, $taxonomy = 'accessories'
 		}
 	}
 		// print "<pre>"; print_r($accessories); print "</pre>";
+	asort($accessories);
 	return $accessories;
 }
-
-// function get_accessories_connections($accessories_raw) {
-// 	$accessories_cats = array();
-// 	foreach ($accessories_raw as $accessory) {
-// 		$terms = get_the_terms($accessory, 'accessories' );
-// 		if($terms[0]->parent == 0){
-// 			$accessories_cats[$terms[0]->term_id] = array(
-// 				'id' => $terms[0]->term_id,
-// 				'name' => $terms[0]->name,
-// 			);
-// 		} else {
-// 			$parent = get_term_by( 'id', $terms[0]->parent , 'accessories' );
-// 	  	$accessories_cats[$parent->term_id] = array(
-// 				'id' => $parent->term_id,
-// 				'name' => $parent->name,
-// 			);
-// 	  	$accessories_cats[$parent->term_id]['sub_cat'] = array(
-// 				'id' => $terms[0]->term_id,
-// 				'name' => $terms[0]->name,
-// 			);
-// 		}
-// 	}
-// 		print "<pre>"; print_r($accessories_cats); print "</pre>";
-// 	// return $accessories_raw;
-// }
-
 ?>

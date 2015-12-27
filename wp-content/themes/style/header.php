@@ -55,26 +55,21 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-    <?php include($theme_dir . '/off-canvas.php'); ?>
     <div class="feedback">
       <div class="feedback__label">Обратная связь</div>
-      <div class="feedback__inner container">
-        <div class="row">
-          <div class="feedback__inner__label col-xs-4">Обратная Связь</div>
-          <div class="feedback__form col-xs-4">
+      <div class="feedback__inner">
+          <div class="feedback__form">
             <?php echo do_shortcode('[contact-form-7 title="feedback"]'); ?>
           </div>
         </div>
-        <button class="feedback__close">
-          <?php include($img_dir . 'common/close.svg') ?>
-        </button>
       </div>
     </div>
+    <?php include($theme_dir . '/off-canvas.php'); ?>
 		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
       <div id="inner-header" class="container header__inner cf">
         <a class="header__logo" href="/"><?php include($img_dir . 'common/logo.svg'); ?></a>
         <div class="header__buttons">
-          <a href="tel:+78123371427" class="header__phone">(812) 337-14-27</a>
+          <a href="tel:+78123371427" class="header__phone">(812) 370-82-21</a>
           <a href="#" class="header__catalog">скачать каталог</a>
           <a href="#" id="toggle-phones" class="toggle-offcanvas header__contacts"><?php include($img_dir . 'common/phone.svg'); ?></a>
           <a href="#" id="toggle-addresses" class="toggle-offcanvas header__addresses"><?php include($img_dir . 'common/pin.svg'); ?></a>

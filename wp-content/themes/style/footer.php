@@ -1,8 +1,10 @@
 <?php global $img_dir  ?>
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-
-				<div id="inner-footer" class="container footer__inner">
+                <div id="inner-footer" class="container footer__inner">
                     <div class="row">
+                        <div class="footer__scroll-top">
+                            <?php include($img_dir . 'common/scroll-top.svg'); ?>
+                        </div>
                         <div class="col-sm-3">
                             <div class="footer__icon"><?php include($img_dir . 'common/phone.svg'); ?></div>
                             <div class="footer__text">

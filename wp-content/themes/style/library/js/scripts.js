@@ -110,17 +110,22 @@ if($('.hardware').length && $('.single-catalog').length ){
 }
 
   $('.feedback__label').click(function () {
-    $(this).parent().addClass('open')
+    $(this).parent().toggleClass('open')
   })
-  $('.feedback__close').click(function () {
-    $('.feedback').removeClass('open')
-  })
+  // $('.feedback__close').click(function () {
+  //   $('.feedback').removeClass('open')
+  // })
 
   if($(".cat-breadcrumb").length){
     var $catBc = $(".cat-breadcrumb");
     var $catBcUrl = $catBc.attr('href').replace('catalog/%catalog_term%/', '');
     $catBc.attr('href', $catBcUrl);
   }
+
+  $('.footer__scroll-top').click(function(){
+    $('.scotch-panel-wrapper').animate({scrollTop : 0},800);
+    // return false;
+  });
 })
 
 

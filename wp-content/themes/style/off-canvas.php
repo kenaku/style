@@ -30,15 +30,16 @@
           <div class="col-sm-4">
               <div class="top-offscreen__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
               <div class="top-offscreen__text">
-                  г. Санкт-Петербург,<br/>
-                  ул. Варшавская, д.3<br/>
-                  МЦ "Мебельный континент",<br/>
-                  1 корпус, з этаж, секция 332 А<br/>
+                  Склад (Производство)<br/>
+                  п. Металлострой,<br/>
+                  ул. Богайчука, д.1
                   <br/>
-                  Т: (812) 337-14-27<br/>
+                  <br/>
+                  Т: (812) 370 81 43<br/>
+                  Т: (812) 370 82 21<br/>
                   e-mail: heys@yandex.ru<br/>
               </div>
-              <img src="/<?php echo $img_dir . 'schema3.gif' ?>" alt="" class="top-offscreen__img">
+              <img src="/<?php echo $img_dir . 'schema4.gif' ?>" alt="" class="top-offscreen__img">
           </div>
         </div>
       </div>

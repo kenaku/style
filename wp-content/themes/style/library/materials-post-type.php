@@ -116,7 +116,7 @@ function get_materials_connections($materials_raw){
 	 	foreach ($items_raw as $item) {
 			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID ), 'square' );
 	 		$items[] = array(
-	 			'name' => $item->post_name,
+	 			'name' => preg_replace("/-\d+/", "", $item->post_name),
 	 			'cat' => $curr_cat->term_id,
 	 			'thumb' => $thumb[0]
 	 		);

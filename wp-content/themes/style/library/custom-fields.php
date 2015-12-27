@@ -244,7 +244,7 @@ function style_register_repeatable_group_field_metabox() {
 		'name'        => __( 'В этой комплектации:' ),
 		// 'description' => __( 'Write a short description for this entry', 'cmb2' ),
 		'id'          => 'description',
-		'type'        => 'textarea',
+		'type'        => 'wysiwyg',
 	) );
 
 }
