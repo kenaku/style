@@ -44,12 +44,13 @@
                         <div class="col-sm-3">
                             <div class="footer__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
                             <div class="footer__text">
-                                г. Санкт-Петербург,<br/>
-                                ул. Варшавская, д.3<br/>
-                                МЦ "Мебельный континент",<br/>
-                                1 корпус, з этаж, секция 332 А<br/>
+                                Склад (Производство)<br/>
+                                п. Металлострой,<br/>
+                                ул. Богайчука, д.1
                                 <br/>
-                                Т: (812) 337-14-27<br/>
+                                <br/>
+                                Т: (812) 370 81 43<br/>
+                                Т: (812) 370 82 21<br/>
                                 e-mail: heys@yandex.ru<br/>
 
                             </div>
