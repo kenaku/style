@@ -31,11 +31,58 @@
 													<span>Предыдущая<br>модель</span>
 												</div>
 											';
-
+										$cat = get_categories( array('type' => 'catalog') );
+										$post_id = get_the_ID();
+										// print_r($post_id);
+										$current_cat = get_the_terms( $post_id, 'catalog' );
+										// print_r($post_id);
+										$items = get_posts(
+									    array(
+								        'posts_per_page' => -1,
+								        'post_type' => 'catalog',
+												'tax_query' => array(array(
+									        'taxonomy' => 'catalog',
+									        'field' => 'slug',
+									        'terms' => array($current_cat[0]->slug)
+										    ))
+									    )
+										);
+										$last_item = end($items);
+										$first_item = array_values($items)[0];
+								 		// print "<pre>"; print_r($post_id); print "</pre>";
+								 		// print "<pre>"; print_r($last_item->ID); print "</pre>";
+										if(($post_id === $first_item->ID)) { ?>
+											  <a href="/catalog/<?php echo $current_cat[0]->slug?>/<?php echo $last_item->post_name ?>">
+													<div class="product__nav__prev">
+													<i>
+														<svg width="14" height="32" viewBox="0 0 14 32">
+															<path d="M1.147 1.37L13 16.322 2.145 30.863"/>
+														</svg>
+													</i>
+													<span>Предыдущая<br>модель</span>
+												</div>
+											 </a>
+										<?php
+										} else {
 											next_post_link('%link', $prev_link);
+										}
+										if ($post_id === $last_item->ID){ ?>
+											 <a href="/catalog/<?php echo $current_cat[0]->slug?>/<?php echo $first_item->post_name ?>">
+													<div class="product__nav__next">
+													<span>Следущая<br>модель</span>
+													<i>
+														<svg width="14" height="32" viewBox="0 0 14 32">
+															<path d="M1.147 1.37L13 16.322 2.145 30.863"/>
+														</svg>
+													</i>
+												</div>
+											 </a>
+											<?php
+										} else {
 											previous_post_link('%link', $next_link);
-										?>
+										}
 
+										?>
 									</div>
 									<h2 class="product__title"><?php the_title(); ?></h2>
 
@@ -52,7 +99,10 @@
 									        		<div class="col-xs product__image"><img class="fancybox" src="<?php echo $thumb[0] ?>" alt=""></div>
 									        		<div class="col-xs-5 product__mod-info">
 								        				<h3 class="product__mod-info__title">В данной комплектации:</h3>
-								        				<?php echo $mod[description] ?>
+								        				<?php
+									        				$parsed_descr = str_replace("\n","<br>",trim($mod[description],"\n"));
+									        				echo $parsed_descr;
+									        		  ?>
 									        		</div>
 								        		</div>
 													<?php } ?>

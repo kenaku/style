@@ -1844,6 +1844,7 @@ svg {
 .breadcrumbs {
   font-size: 1.125rem;
   font-weight: 500;
+  line-height: 1.8125rem;
 }
 .footer {
   margin-top: 40px;
@@ -1977,9 +1978,11 @@ svg {
 .top-offscreen {
   background: #fff;
   text-align: center;
+  opacity: 0;
+  transition: z-index 0.3s ease-in-out;
 }
 .top-offscreen.open {
-  z-index: 1000000 !important;
+  opacity: 1;
 }
 .top-offscreen__inner {
   padding: 2.5rem 0;
@@ -2009,18 +2012,18 @@ svg {
   padding: 10px 20px;
   background: #ff881a;
   position: absolute;
-  right: 0;
-  top: 110px;
+  left: 0;
+  top: 190px;
   z-index: 1000;
   color: #fff;
-  -webkit-transform: translate(100%, 0);
-      -ms-transform: translate(100%, 0);
-          transform: translate(100%, 0);
-  -webkit-transform: translate3d(100%, 0, 0);
-          transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0 10px 10px 0;
 }
 .feedback.open {
   -webkit-transform: translate(0, 0);
@@ -2037,11 +2040,11 @@ svg {
   background: #ff881a;
   position: absolute;
   top: 215px;
-  left: -137px;
+  right: -137px;
   border-radius: 20px 20px 0 0;
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
   cursor: pointer;
   background: #ff881a;
 }

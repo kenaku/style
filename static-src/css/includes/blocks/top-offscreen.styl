@@ -1,8 +1,11 @@
 .top-offscreen
   background white
   text-align: center
+  opacity 0
+  transition: z-index .3s ease-in-out
   &.open
-    z-index: 1000000!important
+    // z-index: 1000000!important
+    opacity 1
   &__inner
     padding rem(40) 0
     .top-offscreen--phones &

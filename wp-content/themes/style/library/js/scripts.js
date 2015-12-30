@@ -18,41 +18,77 @@ setTimeout(function () {
   var offscreenAddresses = $('#offscreen-addresses').scotchPanel({
       containerSelector: 'body', // As a jQuery Selector
       direction: 'top', // Make it toggle in from the left
-      duration: 300, // Speed in ms how fast you want it to be
-      transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+      duration: 500, // Speed in ms how fast you want it to be
+      transition: 'ease-in-out', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
       distanceX: '70%', // Size fo the toggle
       enableEscapeKey: true, // Clicking Esc will close the panel
       beforePanelOpen: function() {
         $('#toggle-addresses').addClass("open");
+        $('#offscreen-phones').removeClass("open");
+
+        // offscreenPhones.close()
+        console.log('AdressesOpen');
+        // $("#offscreen-addresses").css('z-index', '-1');
       },
       beforePanelClose: function() {
-        $('.toggle-offcanvas').removeClass("open");
+        $('#toggle-addresses').removeClass("open");
+        $('#offscreen-addresses').removeClass("open");
+        console.log('AdressesClose');
       },
   });
   $('#toggle-addresses').click(function() {
-      offscreenAddresses.toggle();
-      $('.top-offscreen').removeClass('open');
+      if($("#toggle-phones").hasClass('open')){
+        offscreenPhones.close();
+        $('#offscreen-phones').removeClass('open');
+        // setTimeout(function() {
+          offscreenAddresses.open();
+        // }, 0)
+      } else{
+        offscreenAddresses.toggle();
+      }
+      // $('.top-offscreen').removeClass('open');
       $('#offscreen-addresses').addClass('open');
       return false;
   });
   var offscreenPhones = $('#offscreen-phones').scotchPanel({
       containerSelector: 'body', // As a jQuery Selector
       direction: 'top', // Make it toggle in from the left
-      duration: 300, // Speed in ms how fast you want it to be
-      transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
+      duration: 500, // Speed in ms how fast you want it to be
+      transition: 'ease-in-out', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
       distanceX: '70%', // Size fo the toggle
       enableEscapeKey: true, // Clicking Esc will close the panel
       beforePanelOpen: function() {
         $('#toggle-phones').addClass("open");
+        $('#offscreen-phones').addClass('open');
+        $('#offscreen-addresses').removeClass('open');
+        // offscreenAddresses.close()
+        console.log('phonesOpen');
+        setTimeout(function() {
+          $("#offscreen-addresses").css('z-index', '-1');
+          $("#offscreen-phones").css('z-index', '10000');
+        }, 300)
       },
       beforePanelClose: function() {
-        $('.toggle-offcanvas').removeClass("open");
+        $('#toggle-phones').removeClass("open");
+        // $('#offscreen-phones').removeClass('open');
+        setTimeout(function() {
+          $("#offscreen-phones").css('z-index', '-1');
+          $("#offscreen-addresses").css('z-index', '10000');
+        }, 300)
+        console.log('phonesClose');
+        // $("#offscreen-addresses").css('z-index', '100');
       },
   });
   $('#toggle-phones').click(function() {
-      offscreenPhones.toggle();
-      $('.top-offscreen').removeClass('open');
-      $('#offscreen-phones').addClass('open');
+      if($("#toggle-addresses").hasClass('open')){
+          offscreenAddresses.close();
+        // setTimeout(function() {
+          offscreenPhones.open();
+        // }, 1000)
+      } else{
+        offscreenPhones.toggle();
+      }
+
       return false;
   });
 }, 1000)
@@ -126,6 +162,8 @@ if($('.hardware').length && $('.single-catalog').length ){
     $('.scotch-panel-wrapper').animate({scrollTop : 0},800);
     // return false;
   });
+
+  $("#feedback").appendTo("body");
 })
 
 

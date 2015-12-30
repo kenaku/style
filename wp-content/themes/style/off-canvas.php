@@ -1,7 +1,19 @@
     <div id="offscreen-addresses" class="top-offscreen top-offscreen--addresses">
       <div class="container top-offscreen__inner">
         <div class="row">
-            <div class="col-sm-4">
+          <div class="col-sm-3">
+              <div class="top-offscreen__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
+              <div class="top-offscreen__text">
+                  г. Санкт-Петербург,<br/>
+                  улица Варшавская<br/>
+                  дом 75<br/>
+                  <br/>
+                  Т: (812) 370-81-43<br/>
+                  Т: (812) 370-82-21<br/>
+                  e-mail: heys@yandex.ru<br/>
+              </div>
+          </div>
+          <div class="col-sm-3">
               <div class="top-offscreen__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
               <div class="top-offscreen__text">
                   г. Санкт-Петербург,<br/>
@@ -14,7 +26,7 @@
               </div>
               <img src="/<?php echo $img_dir . 'schema2.gif' ?>" alt="" class="top-offscreen__img">
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
               <div class="top-offscreen__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
               <div class="top-offscreen__text">
                   г. Санкт-Петербург,<br/>
@@ -27,7 +39,7 @@
               </div>
               <img src="/<?php echo $img_dir . 'schema3.gif' ?>" alt="" class="top-offscreen__img">
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
               <div class="top-offscreen__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
               <div class="top-offscreen__text">
                   Склад (Производство)<br/>

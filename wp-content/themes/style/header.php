@@ -54,8 +54,8 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-    <div class="feedback">
+	<body id="body" <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+    <div id="feedback" class="feedback">
       <div class="feedback__label">Обратная связь</div>
       <div class="feedback__inner">
           <div class="feedback__form">

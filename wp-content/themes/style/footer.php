@@ -20,13 +20,13 @@
                         <div class="col-sm-3">
                             <div class="footer__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
                             <div class="footer__text">
-                                г. Санкт-Петербург,<br/>
-                                ул. Новолитовская, д. 15В<br/>
-                                МЦ "Аквилон", 1 этаж, <br/>
-                                секция 5<br/>
-                                <br/>
-                                Т: (812) 740-18-72<br/>
-                                e-mail: heys@yandex.ru<br/>
+                              г. Санкт-Петербург,<br/>
+                              улица Варшавская<br/>
+                              дом 75<br/>
+                              <br/>
+                              Т: (812) 370-81-43<br/>
+                              Т: (812) 370-82-21<br/>
+                              e-mail: heys@yandex.ru<br/>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -44,15 +44,13 @@
                         <div class="col-sm-3">
                             <div class="footer__icon"><?php include($img_dir . 'common/pin.svg'); ?></div>
                             <div class="footer__text">
-                                Склад (Производство)<br/>
-                                п. Металлострой,<br/>
-                                ул. Богайчука, д.1
+                                г. Санкт-Петербург,<br/>
+                                ул. Новолитовская, д. 15В<br/>
+                                МЦ "Аквилон", 1 этаж, <br/>
+                                секция 5<br/>
                                 <br/>
-                                <br/>
-                                Т: (812) 370 81 43<br/>
-                                Т: (812) 370 82 21<br/>
+                                Т: (812) 740-18-72<br/>
                                 e-mail: heys@yandex.ru<br/>
-
                             </div>
                         </div>
 
