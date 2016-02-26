@@ -2376,6 +2376,10 @@ svg {
   padding: 0.75rem;
   background: #eee;
 }
+.product__mod-info li {
+  display: list-item;
+  margin-left: 25px;
+}
 .product__info--single {
   margin-left: 0.75rem;
 }
