@@ -2274,6 +2274,7 @@ svg {
 .products__title {
   margin-top: 15px;
   font-size: 20px;
+  padding: 0 15px;
 }
 .product {
   position: relative;
