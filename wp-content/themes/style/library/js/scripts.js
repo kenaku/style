@@ -99,6 +99,8 @@ if($(".product-slider__slide").length > 1){
       items: "1",
       loop:  true,
       mouseDrag: false,
+      smartSpeed: 1500,
+      fluidSpeed: 1500,
     });
     $('#next-btn')
       .click(function() {
