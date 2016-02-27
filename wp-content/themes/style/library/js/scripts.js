@@ -5,6 +5,9 @@ $(document).ready(function($) {
       items: "1",
       loop:  true,
       mouseDrag: false,
+      smartSpeed: 1000,
+      fluidSpeed: 1000,
+
     });
     $('.index-slider__next-btn').click(function() {
         $indexSlider.trigger('next.owl.carousel');
@@ -99,8 +102,8 @@ if($(".product-slider__slide").length > 1){
       items: "1",
       loop:  true,
       mouseDrag: false,
-      smartSpeed: 1500,
-      fluidSpeed: 1500,
+      smartSpeed: 1000,
+      fluidSpeed: 1000,
     });
     $('#next-btn')
       .click(function() {
