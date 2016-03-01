@@ -2529,6 +2529,12 @@ li.active .hardware__tab {
   display: -ms-flexbox;
   display: flex;
 }
+.product__materials__alert {
+  margin: 0 20px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ff881a;
+}
 .product-slider {
   padding: 0 0.625rem;
   margin-bottom: 2.5rem;

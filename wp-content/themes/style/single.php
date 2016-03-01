@@ -219,6 +219,10 @@
 										class="hardware <?php if($info_tabs[0][0] == 'product__materials') { ?>active<?php } ?>"
 										data-pane="product__materials"
 								>
+									<div class="product__materials__alert">
+										Цвет материалов и дерева зависит от настроек Вашего монитора и может отличаться от оригинала.<br/>
+										При необходимости более точного подбора цвета - рекомендуем Вам ознакомиться с оригиналами образцов.
+									</div>
 									<?php
 									$j = 0;
 									foreach ($materials_raws as $material_top_cat) {
