@@ -2552,7 +2552,7 @@ li.active .hardware__tab {
   position: relative;
 }
 .product-slider__content {
-  min-height: 26.25rem;
+  min-height: 15.625rem;
   position: relative;
 }
 .product-slider__content.owl-carousel {

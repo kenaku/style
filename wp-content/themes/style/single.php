@@ -95,10 +95,11 @@
 									        		<div class="col-xs product__image"><img class="fancybox" src="<?php echo $thumb[0] ?>" alt=""></div>
 									        		<div class="col-xs-5 product__mod-info">
 								        				<h3 class="product__mod-info__title">В данной комплектации:</h3>
+								        				<li>
 								        				<?php
-									        				$parsed_descr = str_replace("\n","<br>",trim($mod[description],"\n"));
+									        				$parsed_descr = str_replace("\n","</li><li>",trim($mod[description],"\n"));
 									        				echo $parsed_descr;
-									        		  ?>
+									        		  ?></li>
 									        		</div>
 								        		</div>
 													<?php } ?>
