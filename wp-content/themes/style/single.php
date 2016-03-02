@@ -33,9 +33,7 @@
 											';
 										$cat = get_categories( array('type' => 'catalog') );
 										$post_id = get_the_ID();
-										// print_r($post_id);
 										$current_cat = get_the_terms( $post_id, 'catalog' );
-										// print_r($post_id);
 										$items = get_posts(
 									    array(
 								        'posts_per_page' => -1,
@@ -49,8 +47,6 @@
 										);
 										$last_item = end($items);
 										$first_item = array_values($items)[0];
-								 		// print "<pre>"; print_r($post_id); print "</pre>";
-								 		// print "<pre>"; print_r($last_item->ID); print "</pre>";
 										if(($post_id === $first_item->ID)) { ?>
 											  <a href="/catalog/<?php echo $current_cat[0]->slug?>/<?php echo $last_item->post_name ?>">
 													<div class="product__nav__prev">

@@ -2,10 +2,18 @@
   background lightgray
   padding rem(30) 0 rem(50) 0
   margin-bottom rem(20)
+
   &__inner
     position relative
   &__content
+    min-height: rem(420)
+    &.owl-carousel
+      min-height: inherit
     position relative
+    > a
+      position: absolute
+      top 0
+      left 0
   &__slide
     background white
     min-height rem(300)
@@ -24,3 +32,4 @@
   &__prev-btn
     left rem(45)
     transform rotate(180deg)
+

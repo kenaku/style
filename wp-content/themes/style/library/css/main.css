@@ -1902,7 +1902,16 @@ svg {
   position: relative;
 }
 .index-slider__content {
+  min-height: 26.25rem;
   position: relative;
+}
+.index-slider__content.owl-carousel {
+  min-height: inherit;
+}
+.index-slider__content > a {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .index-slider__slide {
   background: #fff;
@@ -2543,7 +2552,15 @@ li.active .hardware__tab {
   position: relative;
 }
 .product-slider__content {
+  min-height: 26.25rem;
   position: relative;
+}
+.product-slider__content.owl-carousel {
+  min-height: inherit;
+}
+.product-slider__content > div {
+  position: absolute;
+  width: 100%;
 }
 .product-slider__slide {
   padding: 0 3.125rem;

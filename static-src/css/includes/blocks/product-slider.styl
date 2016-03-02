@@ -4,7 +4,14 @@
   &__inner
     position relative
   &__content
+    min-height: rem(420)
+    &.owl-carousel
+      min-height: inherit
+
     position relative
+    > div
+      position: absolute
+      width: 100%
   &__slide
     padding 0 rem(50)
 
