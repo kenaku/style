@@ -9,7 +9,7 @@
 
 <?php get_header(); ?>
 
-			<div id="content" class="page-index">
+			<div id="content" class="page-material">
 
 				<div id="inner-content">
 

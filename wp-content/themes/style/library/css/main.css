@@ -2285,6 +2285,27 @@ svg {
   font-size: 20px;
   padding: 0 15px;
 }
+.page {
+  text-align: center;
+}
+.page h2 {
+  font-weight: 500;
+  font-size: 2.75rem;
+  color: #ff881a;
+  line-height: 1;
+  text-align: center;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.page img {
+  width: auto;
+  height: auto;
+  max-width: 250px;
+  padding: 10px;
+}
+.page img#fancybox-img {
+  max-width: none;
+}
 .product {
   position: relative;
 }
