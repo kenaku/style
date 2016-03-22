@@ -2285,10 +2285,10 @@ svg {
   font-size: 20px;
   padding: 0 15px;
 }
-.page {
+.default-page {
   text-align: center;
 }
-.page h2 {
+.default-page h2 {
   font-weight: 500;
   font-size: 2.75rem;
   color: #ff881a;
@@ -2297,14 +2297,21 @@ svg {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-.page img {
+.default-page img {
   width: auto;
   height: auto;
   max-width: 250px;
   padding: 10px;
 }
-.page img#fancybox-img {
+.default-page img#fancybox-img {
   max-width: none;
+}
+.default-page a {
+  color: #ff881a;
+  text-decoration: underline;
+}
+.default-page a:hover {
+  text-decoration: none;
 }
 .product {
   position: relative;

@@ -43,13 +43,6 @@
         overflow: hidden;
         backface-visibility: hidden;
       }
-     /* a.fancybox img {
-          border: none;
-          -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
-      }
-      a.fancybox:hover img {
-          position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
-      }*/
     </style>
 		<?php wp_head(); ?>
 	</head>
@@ -70,6 +63,7 @@
         <a class="header__logo" href="/"><?php include($img_dir . 'common/logo.svg'); ?></a>
         <div class="header__buttons">
           <a href="tel:+78123371427" class="header__phone">(812) 370-82-21</a>
+          <a href="/info" class="header__catalog">информация</a>
           <a href="#" class="header__catalog">скачать каталог</a>
           <a href="#" id="toggle-phones" class="toggle-offcanvas header__contacts"><?php include($img_dir . 'common/phone.svg'); ?></a>
           <a href="#" id="toggle-addresses" class="toggle-offcanvas header__addresses"><?php include($img_dir . 'common/pin.svg'); ?></a>

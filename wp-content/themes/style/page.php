@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-			<div id="content" class="page container">
+			<div id="content" class="default-page container">
 
 				<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
