@@ -81,6 +81,9 @@
                 $('a.fancybox').fancybox({
                     titlePosition: titlePosition
                 });
+                setTimeout(function(){
+                    $('#fancybox-wrap,#fancybox-overlay').appendTo("body");
+                }, 1000)
             });
             $.noConflict();
         </script>
