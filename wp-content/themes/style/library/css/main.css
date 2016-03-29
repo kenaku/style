@@ -2297,21 +2297,23 @@ svg {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-.default-page img {
-  width: auto;
-  height: auto;
-  max-width: 250px;
-  padding: 10px;
-}
-.default-page img#fancybox-img {
-  max-width: none;
-}
 .default-page a {
+  padding: 10px;
   color: #ff881a;
   text-decoration: underline;
 }
 .default-page a:hover {
   text-decoration: none;
+}
+.default-page img {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+.default-page img#fancybox-img {
+  max-width: none;
 }
 .product {
   position: relative;
