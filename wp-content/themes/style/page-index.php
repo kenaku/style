@@ -43,7 +43,7 @@
 												</a>
 												<?php } ?>
 										</div>
-										<a href="#" class="big-btn center">скачать каталог</a>
+										<a href="http://style.designhq.ru/wp-content/uploads/2016/03/catalog-style.pdf" class="big-btn center">скачать каталог</a>
 										<div class="index-catalog__description">
 										  <?php the_content(); ?>
 										</div>

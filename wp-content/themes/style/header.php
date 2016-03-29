@@ -64,7 +64,7 @@
         <div class="header__buttons">
           <a href="tel:+78123371427" class="header__phone">(812) 370-82-21</a>
           <a href="/info" class="header__catalog">информация</a>
-          <a href="#" class="header__catalog">скачать каталог</a>
+          <a href="http://style.designhq.ru/wp-content/uploads/2016/03/catalog-style.pdf" class="header__catalog">скачать каталог</a>
           <a href="#" id="toggle-phones" class="toggle-offcanvas header__contacts"><?php include($img_dir . 'common/phone.svg'); ?></a>
           <a href="#" id="toggle-addresses" class="toggle-offcanvas header__addresses"><?php include($img_dir . 'common/pin.svg'); ?></a>
         </div>
