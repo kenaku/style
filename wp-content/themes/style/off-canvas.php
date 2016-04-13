@@ -47,8 +47,8 @@
                   ул. Богайчука, д.1
                   <br/>
                   <br/>
-                  Т: (812) 370 81 43<br/>
-                  Т: (812) 370 82 21<br/>
+                  Т: (812) 370 86 55<br/>
+                  Т: (812) 375 25 57<br/>
                   e-mail: heys@yandex.ru<br/>
               </div>
               <img src="/<?php echo $img_dir . 'schema4.gif' ?>" alt="" class="top-offscreen__img">
